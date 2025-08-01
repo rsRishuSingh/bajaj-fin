@@ -1,0 +1,129 @@
+[
+  {
+    "query_agent_in": {
+      "content": "which documents are required to apply for a claim?",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "human",
+      "name": null,
+      "id": "82f95879-662e-4160-a14b-9597d5ea2a70",
+      "example": false
+    },
+    "timestamp": "2025-08-01T20:11:17.320640+05:30"
+  },
+  {
+    "query_agent_out": {
+      "content": "",
+      "additional_kwargs": {
+        "tool_calls": [
+          {
+            "id": "call_IMRxCdX5ktt6So0D0oPgMSy9",
+            "function": {
+              "arguments": "{\"query\":\"which documents are required to apply for a claim?\",\"top_k\":3}",
+              "name": "hybrid_search"
+            },
+            "type": "function"
+          }
+        ],
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 187,
+          "total_tokens": 217,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_e6529acef4",
+        "id": "chatcmpl-BzlEcMpvT2Fw3Dev033kSSmicwvmg",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {
+              "hate": {
+                "filtered": false,
+                "severity": "safe"
+              },
+              "jailbreak": {
+                "filtered": false,
+                "detected": false
+              },
+              "self_harm": {
+                "filtered": false,
+                "severity": "safe"
+              },
+              "sexual": {
+                "filtered": false,
+                "severity": "safe"
+              },
+              "violence": {
+                "filtered": false,
+                "severity": "safe"
+              }
+            }
+          }
+        ],
+        "finish_reason": "tool_calls",
+        "logprobs": null,
+        "content_filter_results": {}
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--c4dd5896-ddfe-4d84-a21a-94b87dd61060-0",
+      "example": false,
+      "tool_calls": [
+        {
+          "name": "hybrid_search",
+          "args": {
+            "query": "which documents are required to apply for a claim?",
+            "top_k": 3
+          },
+          "id": "call_IMRxCdX5ktt6So0D0oPgMSy9",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 187,
+        "output_tokens": 30,
+        "total_tokens": 217,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-01T20:11:19.271327+05:30"
+  },
+  {
+    "check_content": "expand_query",
+    "timestamp": "2025-08-01T20:11:21.011846+05:30"
+  },
+  {
+    "expand_query": "< Optimised Query: documents required for insurance claim application process >",
+    "timestamp": "2025-08-01T20:11:21.653514+05:30"
+  },
+  {
+    "check_content": "answer_query",
+    "timestamp": "2025-08-01T20:11:22.129155+05:30"
+  },
+  {
+    "answer_query": "The documents typically required to apply for an insurance claim include:\n\n1. **Claim Form**: Duly filled and signed claim form provided by the insurance company.\n2. **Policy Document**: Copy of the insurance policy.\n3. **Proof of Loss/Damage**: Evidence such as photographs, invoices, or receipts related to the claim.\n4. **Identification Proof**: Government-issued ID proof of the policyholder.\n5. **FIR/Police Report**: If applicable, in cases such as theft or accidents.\n6. **Medical Reports and Bills**: For health-related claims, include medical records, prescriptions, and hospitalization bills.\n7. **Repair Estimates**: In case of vehicle or property damage, provide repair estimates or bills",
+    "timestamp": "2025-08-01T20:11:24.052603+05:30"
+  }
+]

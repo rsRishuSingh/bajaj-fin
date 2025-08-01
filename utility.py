@@ -3,13 +3,26 @@ import os
 import json
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
-from typing import  Any, List, Union
+from typing import  Any, List, Union,Dict
 from chunking import recursive_split
 from datetime import datetime, timezone, timedelta
 from langchain_core.messages import HumanMessage, BaseMessage
 
 load_dotenv()
-MODEL_NAME       = os.getenv("MODEL_NAME", "qwen/qwen3-32b")
+MODEL_NAME = os.getenv("MODEL_NAME", "qwen/qwen3-32b")
+
+
+def save_responses(responses: Dict[str, str], filename: str = "responses.json") -> None:
+    """
+    Save the given query→answer mapping as a pretty-printed JSON file.
+
+    Args:
+        responses: Dict where keys are the original queries and values are the answers.
+        filename:  Path (and name) of the file to write.
+    """
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(responses, f, ensure_ascii=False, indent=2)
+    print(f"Saved {len(responses)} responses to {filename}")
 
 def _unwrap(item: Any) -> Any:
     """
@@ -27,7 +40,7 @@ def _unwrap(item: Any) -> Any:
 
 def append_to_response(
     new_items: List[Union[dict, BaseMessage, Any]],
-    filename: str = "response.json"
+    filename: str = "graph_logs.json"
 ) -> None:
     """
     Append a list of items to a JSON array in `filename`, tagging each with a 'timestamp'.

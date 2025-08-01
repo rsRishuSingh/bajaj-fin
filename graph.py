@@ -17,12 +17,12 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode
 from langgraph.graph.message import add_messages
 from langchain.docstore.document import Document
-from save import save_responses
-
+from utility import append_to_response, get_context, save_responses
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning, module="torch")
 
-from utility import append_to_response, get_context
+
+
 
 # Define recursion limit for deep workflows (support 20 queries in parallel)
 sys.setrecursionlimit(10**5)
@@ -89,6 +89,7 @@ def hybrid_search(query: str, top_k: int = 3) -> List[str]:
         limit=top_k
     )
     contexts = [pt.payload.get('text', '') for pt in result.points]
+    append_to_response([{"hybrid_search": contexts}], filename="graph_logs.json")
     return contexts or ["No relevant context found."]
 
 # Bind hybrid_search tool to LLM
@@ -104,19 +105,18 @@ def check_query_agent(state: AgentState) -> AgentState:
     """
     system = SystemMessage(
         content=(
-            "You are the RAG orchestrator. Analyze the latest user message and either:"
-            "\n 1) Call hybrid_search Tool for document retrieval in legal, insurance, contract, policy domains. Do not change query"
-            "\n 2) Return 'Ambiguous query' or 'Insufficient query' as response in format \n<response here> only if the query is outside scope of above domains."
-            "Geographical Location: India"
-
+            "You are the RAG orchestrator which looks at query given by user after uploading the document of legal, insurance, contract, policy domains. Analyze the query and perform one of following task:"
+            "\n 1) Call hybrid_search Tool for document retrieval."
+            "\n 2) Return 'Ambiguous query' or 'Insufficient query' as response in format \n<response here> only and only when query is not creating any meaning."
+            "\nDo not change query"
         )
     )
     query = state['messages'][-1]
-    append_to_response([{"query_agent_in": query.content}], filename="response.json")
+    append_to_response([{"query_agent_in": query}], filename="graph_logs.json")
 
     response = check_query_LLM.invoke([system, query])
 
-    append_to_response([{"query_agent_out": response.content}], filename="response.json")
+    append_to_response([{"query_agent_out": response}], filename="graph_logs.json")
     return {"messages": [response]}
 
 # Content checking node
@@ -130,12 +130,13 @@ def check_docs_content(state: AgentState) -> AgentState:
             "\n• If context is insufficient or irrelevant, return 'expand_query' as response."
             "\n• If context fully answers, return 'answer_query' as response."
             "\n• If 'expand_query' was already returned as reponse once, then return 'answer_query' as response to avoid loops." 
-            f"\nRECENT CONVERSATION:\n{get_context(state,10)}"
+            "\n make sure 'expand_query' is called only once in entire flow"
+            f"\nRECENT CONVERSATION:\n{get_context(state,20)}"
             "\nResponse format must be like:\n<response here>"
         )
     )
     response = llm.invoke([prompt])
-    append_to_response([{"check_content": response.content}], filename="response.json")
+    append_to_response([{"check_content": response.content}], filename="graph_logs.json")
     return {"messages": [response]}
 
 # Query expansion node
@@ -149,13 +150,13 @@ def expand_query(state: AgentState) -> AgentState:
         )
     )
     human = HumanMessage(
-        content=(f"RECENT CONVERSATION:\n{get_context(state,10)} "
+        content=(f"RECENT CONVERSATION:\n{get_context(state,5)} "
                  "\nOutput query format must be like < Optimisied Query: <query here> >\n"
                  "\nDo not return anything else in the response")
     )
     response = llm.invoke([system, human])
 
-    append_to_response([{"expand_query": response.content}], filename="response.json")
+    append_to_response([{"expand_query": response.content}], filename="graph_logs.json")
     return {"messages": [HumanMessage(content=f"New user query: {response.content}")]} 
 
 # Answer generation node
@@ -176,7 +177,7 @@ def answer_query(state: AgentState) -> AgentState:
         )
     )
     response = llm.invoke([prompt])
-    append_to_response([{"answer_query": response.content}], filename="response.json")
+    append_to_response([{"answer_query": response.content}], filename="graph_logs.json")
     return {"messages": [response]}
 
 # Instantiate graph
@@ -251,18 +252,18 @@ if __name__ == '__main__':
     # Example queries to run in parallel
     list_of_questions = [
         "which documents are required to apply for a claim?",
-        "How many types of vaccination are available for children of age group between one to twelve years?",
-        "What is the name and address of company providing insurance ?",
-        "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
-        "What is the waiting period for pre-existing diseases (PED) to be covered?",
-        "Does this policy cover maternity expenses, and what are the conditions?",
-        "What is the waiting period for cataract surgery?",
-        "Are the medical expenses for an organ donor covered under this policy?",
-        "What is the No Claim Discount (NCD) offered in this policy?",
-        "Is there a benefit for preventive health check-ups?",
-        "How does the policy define a 'Hospital'?",
-        "What is the extent of coverage for AYUSH treatments?",
-        "Are there any sub-limits on room rent and ICU charges for Plan A?"
+        # "How many types of vaccination are available for children of age group between one to twelve years?",
+        # "What is the name and address of company providing insurance ?",
+        # "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+        # "What is the waiting period for pre-existing diseases (PED) to be covered?",
+        # "Does this policy cover maternity expenses, and what are the conditions?",
+        # "What is the waiting period for cataract surgery?",
+        # "Are the medical expenses for an organ donor covered under this policy?",
+        # "What is the No Claim Discount (NCD) offered in this policy?",
+        # "Is there a benefit for preventive health check-ups?",
+        # "How does the policy define a 'Hospital'?",
+        # "What is the extent of coverage for AYUSH treatments?",
+        # "Are there any sub-limits on room rent and ICU charges for Plan A?"
     ]
     start = time.time()
     responses = asyncio.run(parallel_orchestrator(list_of_questions))
