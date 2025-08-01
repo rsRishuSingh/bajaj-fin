@@ -1,97 +1,60 @@
 import os
-import json
-import re
-from typing import List
-
-import fitz  # PyMuPDF
 from dotenv import load_dotenv
 
-from langchain.docstore.document import Document
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_experimental.text_splitter import SemanticChunker
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_openai import AzureOpenAIEmbeddings
+# 1) Use the community package for AzureChatOpenAI
+from langchain_community.chat_models import AzureChatOpenAI
 
+# 2) Import LLMChain and PromptTemplate from their dedicated modules
+from langchain.chains import LLMChain
+from langchain_core.prompts import PromptTemplate
 
-load_dotenv()
+load_dotenv()  # loads AZURE_OPENAI_API_KEY from .env
 
-EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
-embeddings_model = HuggingFaceEmbeddings(model_name=EMBED_MODEL_NAME)
+# Azure OpenAI configuration
+AZURE_ENDPOINT        = "https://rishu-mdodjz43-eastus2.cognitiveservices.azure.com/"
+AZURE_DEPLOYMENT_NAME = "gpt-4o"
+AZURE_API_VERSION     = "2024-05-01-preview"
+AZURE_API_KEY         = os.getenv("AZURE_OPENAI_GPT_API")
 
+# Initialize the AzureChatOpenAI client without deprecated params
+llm = AzureChatOpenAI(
+    deployment_name=AZURE_DEPLOYMENT_NAME,
+    azure_endpoint=AZURE_ENDPOINT,
+    api_version=AZURE_API_VERSION,
+    api_key=AZURE_API_KEY,
+    temperature=0.7,
+    max_tokens=150,
+)
 
-def recursive_split(text: str, chunk_size: int = 1000, chunk_overlap: int = 100) -> List[str]:
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size,
-        chunk_overlap=chunk_overlap,
-        separators=["\n\n", "\n", ".", " "],
-    )
-    return splitter.split_text(text)
+# Define your prompt template
+_template = """
+You are a helpful RAG assistant. Your task is to answer the user's question
+*only* using the provided context. If the context doesn't contain the answer,
+state that you cannot answer based on the provided information.
 
+Context:
+---
+{context}
+---
 
-def semantic_chunker(text: str) -> List[str]:
+Question: {query}
+
+Answer:
+"""
+prompt = PromptTemplate.from_template(_template)
+
+# Wire up the chain
+chain = LLMChain(llm=llm, prompt=prompt)
+
+def generate_answer(query: str, context: str) -> str:
     """
-    Given a block of text, first apply recursive_split(), then
-    semantically re‑split each segment via Azure embeddings.
+    Generates an answer using the LLM based on the query and retrieved context.
     """
-    chunks: List[str] = []
-    for segment in recursive_split(text):
-        chunker = SemanticChunker(embeddings_model)
-        chunks.extend(chunker.split_text(segment))
-    return chunks
-
-def extract_chunks_from_pdf(pdf_path: str) -> List[Document]:
-    docs: List[Document] = []
-    print(f"🗂️  Opening PDF: {pdf_path}")
-    pdf = fitz.open(pdf_path)
-
-    for page_idx, page in enumerate(pdf, start=1):
-        print(f"📖  Reading page {page_idx}")
-        raw = re.sub(r"\s+", " ", page.get_text("text")).strip()
-        if not raw:
-            continue
-
-        for chunk_idx, chunk in enumerate(recursive_split(raw)):
-            docs.append(
-                Document(
-                    page_content=chunk,
-                    metadata={
-                        "page": page_idx,
-                        "chunk": chunk_idx,
-                        "source": os.path.basename(pdf_path),
-                    },
-                )
-            )
-    pdf.close()
-    return docs
-
-
-def save_docs(docs: List[Document], filepath: str = "all_docs.json") -> None:
-    print(f"📥  Saving {len(docs)} chunks → {filepath}")
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(
-            [{"page_content": d.page_content, "metadata": d.metadata} for d in docs],
-            f,
-            indent=2,
-            ensure_ascii=False,
-        )
-
-
-def load_docs(filepath: str = "all_docs.json") -> List[Document]:
-    if not os.path.exists(filepath):
-        return []
-    print(f"📤  Loading chunks from {filepath}")
-    with open(filepath, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return [Document(page_content=d["page_content"], metadata=d["metadata"]) for d in data]
-
+    print("🤖 Generating answer with LangChain…")
+    # use invoke() instead of deprecated run()
+    return chain.invoke({"query": query, "context": context})
 
 if __name__ == "__main__":
-    PDF_PATH = "Policy.pdf"
-
-    # Avoid re‑chunking if you’ve already saved:
-    docs = []
-    if not docs:
-        docs = extract_chunks_from_pdf(PDF_PATH)
-        save_docs(docs,"new_docs.json")
-
-    print(f"✅ Ready with {len(docs)} semantic chunks.")
+    sample_context = "The capital of France is Paris."
+    answer = generate_answer("What is the capital of France?", sample_context)
+    print("Model answered:", answer)

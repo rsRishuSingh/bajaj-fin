@@ -39,7 +39,7 @@ def semantic_chunker(text: str) -> List[str]:
         chunks.extend(chunker.split_text(segment))
     return chunks
 
-def extract_chunks_from_pdf(pdf_path: str) -> List[Document]:
+def extract_chunks_from_pdf(pdf_path: str, chunk_size: str = 1000, chunk_overlap: str = 200) -> List[Document]:
     docs: List[Document] = []
     print(f"🗂️  Opening PDF: {pdf_path}")
     pdf = fitz.open(pdf_path)
@@ -50,7 +50,7 @@ def extract_chunks_from_pdf(pdf_path: str) -> List[Document]:
         if not raw:
             continue
 
-        for chunk_idx, chunk in enumerate(recursive_split(raw)):
+        for chunk_idx, chunk in enumerate(recursive_split(raw, chunk_size,chunk_overlap)):
             docs.append(
                 Document(
                     page_content=chunk,

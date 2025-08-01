@@ -8,8 +8,8 @@ from chunking import load_docs, save_docs, extract_chunks_from_pdf
 from answer import generate_answer
 
 load_dotenv()
-MODEL_NAME = "all-MiniLM-L6-v2"
-COLLECTION_NAME = "my_document_store_15"
+MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+COLLECTION_NAME = "my_document_store_31"
 
 model = SentenceTransformer(MODEL_NAME)
 
@@ -116,7 +116,7 @@ if __name__ == "__main__":
 
     begin = time.time()
     start = time.time()
-    docs = extract_chunks_from_pdf("Policy.pdf")
+    docs = extract_chunks_from_pdf("Policy.pdf",1000, 200)
     print("Time Taken in Chunking: ", time.time()-start)
 
     start = time.time()
@@ -130,23 +130,23 @@ if __name__ == "__main__":
     
     list_of_questions = [
             "which documents are required to apply for a claim?",
-            "How many types of vaccination are available for children of age group between one to twelve years?",
-            "What is the name and address of company providing insurance ?",
-            "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
-            "What is the waiting period for pre-existing diseases (PED) to be covered?",
-            "Does this policy cover maternity expenses, and what are the conditions?",
-            "What is the waiting period for cataract surgery?",
-            "Are the medical expenses for an organ donor covered under this policy?",
-            "What is the No Claim Discount (NCD) offered in this policy?",
-            "Is there a benefit for preventive health check-ups?",
-            "How does the policy define a 'Hospital'?",
-            "What is the extent of coverage for AYUSH treatments?",
-            "Are there any sub-limits on room rent and ICU charges for Plan A?"
+            # "How many types of vaccination are available for children of age group between one to twelve years?",
+            # "What is the name and address of company providing insurance ?",
+            # "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            # "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            # "Does this policy cover maternity expenses, and what are the conditions?",
+            # "What is the waiting period for cataract surgery?",
+            # "Are the medical expenses for an organ donor covered under this policy?",
+            # "What is the No Claim Discount (NCD) offered in this policy?",
+            # "Is there a benefit for preventive health check-ups?",
+            # "How does the policy define a 'Hospital'?",
+            # "What is the extent of coverage for AYUSH treatments?",
+            # "Are there any sub-limits on room rent and ICU charges for Plan A?"
     ]
 
     start = time.time()
     for query in list_of_questions:
-        context = search_similar_chunks(query, COLLECTION_NAME)
+        context = search_similar_chunks(query, COLLECTION_NAME,3)
         generate_answer(query, context)
     
     print("Time Taken in answering all the query: ",time.time()-start)
