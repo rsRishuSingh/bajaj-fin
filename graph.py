@@ -70,12 +70,13 @@ class AgentState(TypedDict):
 
 
 @tool
-def hybrid_search(query: str, collection_name: str, top_k: int = 5) -> List[str]:
+def hybrid_search(query: str, collection_name: str, top_k: int = 3) -> List[str]:
     """
     Perform hybrid retrieval combining vector search over Qdrant.
 
     Args:
         query: The user's natural language query.
+        collection_name: name of qdrant collection
         top_k: Number of top results to return.
 
     Returns:
@@ -119,7 +120,7 @@ def check_query_agent(state: AgentState) -> AgentState:
     system = SystemMessage(
         content=(
             "You are the RAG orchestrator which looks at query given by user after uploading the document of legal, insurance, contract, policy domains. Analyze the query and perform one of following task:"
-            "\n 1) Call hybrid_search Tool for document retrieval."
+            f"\n 1) Call hybrid_search Tool for document retrieval with collection_name: {state['collection_name']}"
             "\n 2) Return 'Ambiguous query' or 'Insufficient query' as response in format \n<response here> only and only when query is not creating any meaning."
             "\nDo not change query"
         )
@@ -185,7 +186,7 @@ def answer_query(state: AgentState) -> AgentState:
             "You are a RAG assistant in legal, insurance, contract, policy domains which buildis the final response to answer user query." 
             "\nGive to the point answer from retrieved context from hybrid_search tool only"
             "\nDo not drift away from main query "
-            "\nDo not hallicunate and acknowledge any missing data."
+            "\nDo not hallucinate and acknowledge any missing data."
             "\nIf not relevent context retrieved Tell the same to user"
             f"\nContext: {get_context(state,20)}"
             "\nResponse format must be like:\n<response here>"
@@ -274,3 +275,21 @@ def graph_orchestrator_run(list_of_questions: List[str], collection_name: str)->
     print("Graph Ended in: ",time.time()-start)
     return responses
 
+list_of_questions = [
+            "which documents are required to apply for a claim?",
+            "How many types of vaccination are available for children of age group between one to twelve years?",
+            "What is the name and address of company providing insurance ?",
+            "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "Does this policy cover maternity expenses, and what are the conditions?",
+            "What is the waiting period for cataract surgery?",
+            "Are the medical expenses for an organ donor covered under this policy?",
+            "What is the No Claim Discount (NCD) offered in this policy?",
+            "Is there a benefit for preventive health check-ups?",
+            "How does the policy define a 'Hospital'?",
+            "What is the extent of coverage for AYUSH treatments?",
+            "Are there any sub-limits on room rent and ICU charges for Plan A?"
+    ]
+
+responses = graph_orchestrator_run(list_of_questions, "my_document_store_40")
+save_responses(responses)

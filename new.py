@@ -31,6 +31,21 @@ AZURE_EMBEDDING_API = os.getenv('azure_embedding_api')
 # PART 1: DOCUMENT PROCESSOR
 # ==============================================================================
 
+def download_pdf(url: str, save_path: str) -> bool:
+    """Downloads a PDF from a URL and saves it locally."""
+    try:
+        print(f"⬇️  Downloading PDF from {url}...")
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+        with open(save_path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192): f.write(chunk)
+        print(f"✅ PDF saved successfully to '{save_path}'")
+        return True
+    except requests.exceptions.RequestException as e:
+        print(f"❌ Failed to download PDF: {e}")
+        return False
+
+
 def process_pdf(pdf_path: str) -> List[Dict[str, Any]]:
     """Extracts text and tables from all pages of a PDF using pdfplumber."""
     if not os.path.exists(pdf_path):
@@ -98,59 +113,6 @@ def chunk_content(extracted_content: List[Dict[str, Any]]) -> List[Document]:
     print(f"✅ Successfully created {len(final_chunks)} semantic chunks.")
     return final_chunks
 
-# ==============================================================================
-# PART 3: VECTOR STORE PROCESSOR
-# ==============================================================================
-
-def store_in_qdrant(documents: List[Document]):
-    """Embeds documents and stores them in Qdrant, enabling BM25 search."""
-
-    qdrant_client = QdrantClient(url=os.getenv("QDRANT_URL"), api_key=os.getenv("QDRANT_API_KEY"))
-    dense_model = get_embedding_model_for_chunking()
-    
-    if not qdrant_client.collection_exists(collection_name=COLLECTION_NAME):
-        qdrant_client.create_collection(
-            collection_name=COLLECTION_NAME,
-            vectors_config=models.VectorParams(size=AZURE_ADA_002_VECTOR_SIZE, distance=models.Distance.COSINE),
-        )
-        qdrant_client.create_payload_index(
-            collection_name=COLLECTION_NAME, field_name="text",
-            field_schema=models.TextIndexParams(type="text", tokenizer=models.TokenizerType.WORD, lowercase=True)
-        )
-    else:
-        print(f"Collection '{COLLECTION_NAME}' already exists.")
-        
-    batch_size = 128
-    for i in range(0, len(documents), batch_size):
-        batch_docs = documents[i : i + batch_size]
-        batch_content = [doc.page_content for doc in batch_docs]
-        embeddings = dense_model.embed_documents(batch_content)
-        points = [
-            models.PointStruct(id=str(uuid.uuid4()), vector=embedding, payload={**doc.metadata, "text": doc.page_content})
-            for doc, embedding in zip(batch_docs, embeddings)
-        ]
-        qdrant_client.upsert(collection_name=COLLECTION_NAME, points=points, wait=True)
-    print(f"✅ Successfully stored all {len(documents)} documents.")
-
-
-
-# ==============================================================================
-# PART 5: MAIN APPLICATION RUNNER
-# ==============================================================================
-
-def download_pdf(url: str, save_path: str) -> bool:
-    """Downloads a PDF from a URL and saves it locally."""
-    try:
-        print(f"⬇️  Downloading PDF from {url}...")
-        response = requests.get(url, stream=True)
-        response.raise_for_status()
-        with open(save_path, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=8192): f.write(chunk)
-        print(f"✅ PDF saved successfully to '{save_path}'")
-        return True
-    except requests.exceptions.RequestException as e:
-        print(f"❌ Failed to download PDF: {e}")
-        return False
 
 def run_complete_pipeline(json_path: str) -> list:
     """Executes the full RAG pipeline from a JSON input file and returns the results."""
@@ -159,36 +121,7 @@ def run_complete_pipeline(json_path: str) -> list:
     pdf_url, questions = input_data["pdf_blob_url"], input_data["list_of_questions"]
     local_pdf_path = "temp_document.pdf"
 
-    print("### STARTING INGESTION PIPELINE ###")
-    if not download_pdf(pdf_url, local_pdf_path): return []
-    extracted_content = process_pdf(local_pdf_path)
-    if not extracted_content: return []
-    documents = chunk_content(extracted_content)
-    if not documents: return []
-    store_in_qdrant(documents)
-    print("### INGESTION PIPELINE COMPLETE ###")
-    
-    agent = build_agent()
-    final_results = []
-    for i, question in enumerate(questions):
-        print("\n" + "="*60)
-        print(f"### PROCESSING QUESTION {i+1}/{len(questions)}: '{question}' ###")
-        result = agent.invoke({"original_question": question})
-        answer = result.get('answer', 'No answer was generated.')
-        final_results.append({"question": question, "answer": answer})
-        print(f"### ANSWER GENERATED ###\n{answer}")
     
     os.remove(local_pdf_path)
     print(f"\n✅ Pipeline complete. Cleaned up temporary file.")
     return final_results
-
-if __name__ == '__main__':
-    INPUT_JSON_PATH = r"D:\2. hackrx\hackrx\input_user.json"
-    if not os.path.exists(INPUT_JSON_PATH):
-        print(f"❌ Error: Input file not found at '{INPUT_JSON_PATH}'")
-    else:
-        list_of_answers = run_complete_pipeline(INPUT_JSON_PATH)
-        print("\n" + "#"*60)
-        print("## FINAL STRUCTURED OUTPUT ##")
-        print("#"*60)
-        print(json.dumps(list_of_answers, indent=2))
