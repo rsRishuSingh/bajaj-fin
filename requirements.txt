@@ -1,0 +1,24 @@
+# Core utilities
+python-dotenv
+PyMuPDF                # provides fitz
+pypdf
+
+# LangChain and its extensions
+langchain>=0.3.26
+langchain-text-splitters
+langchain-huggingface
+langchain-community
+langchain-experimental  # for langchain.experimental.graph_transformers
+langgraph
+
+# Vectorstores & embeddings
+qdrant-client[fastembed]>=1.14.1
+# Groq Python SDK
+
+# Retrieval
+rank-bm25
+
+# ML backends
+openai
+langchain-openai
+langchain_groq

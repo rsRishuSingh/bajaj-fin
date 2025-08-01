@@ -1,0 +1,14 @@
+1. name of the person along with their roles who have signed at the end of telsa pdf?
+2. revenue of telsa across each sector over the years
+3. current share price
+4. what is its P/E ratio
+5. give a brief overview of company
+6. list of the current gigafactory in construction along with list of factories that are owned or leased 
+7. Identify all strategic partnerships Tesla entered into in the last five years, and for each partner, summarize the nature and scope of the collaboration.
+8. Trace the evolution of Tesla’s solar business segment: list each major product launch, the quarter it rolled out, and any subsequent performance metrics mentioned (e.g., deployment volumes or revenue impact).
+9. From the 10‑K and Proxy Statement, extract Tesla’s board composition changes over time—who joined or left in each year—and any disclosed rationale or qualifications highlighted.
+10. Compare Tesla’s stated carbon‑reduction targets with its reported Scope 1, 2, and 3 emissions over the past three reporting periods—highlight any gaps and management’s commentary on bridging them.
+
+# myenv/Scripts/Activate
+# python main.py
+# chainlit run app.py
