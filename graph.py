@@ -1,9 +1,11 @@
+import sys
 import os
 import json
-from typing import List, Annotated, Sequence, TypedDict
 import time
 import requests
 import numpy as np
+import asyncio
+from typing import List, Annotated, Sequence, TypedDict, Dict, Tuple
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
@@ -15,11 +17,15 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode
 from langgraph.graph.message import add_messages
 from langchain.docstore.document import Document
+from save import save_responses
 
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning, module="torch")
 
 from utility import append_to_response, get_context
+
+# Define recursion limit for deep workflows (support 20 queries in parallel)
+sys.setrecursionlimit(10**5)
 
 load_dotenv()
 
@@ -123,7 +129,7 @@ def check_docs_content(state: AgentState) -> AgentState:
             "You are a RAG assistant in legal, insurance, contract, policy domains which checks whether retrieved context answer user's query correctly and precisely."
             "\n• If context is insufficient or irrelevant, return 'expand_query' as response."
             "\n• If context fully answers, return 'answer_query' as response."
-            "\n• If 'expand_query' was returned twice, proceed to 'answer_query' as response to avoid loops." 
+            "\n• If 'expand_query' was already returned as reponse once, then return 'answer_query' as response to avoid loops." 
             f"\nRECENT CONVERSATION:\n{get_context(state,10)}"
             "\nResponse format must be like:\n<response here>"
         )
@@ -217,27 +223,49 @@ graph.add_conditional_edges(
 graph.add_edge("expand_query","hybrid_search_tool")
 graph.add_edge("answer_query",END)
 
+# Compile graph into an app
 app = graph.compile()
-start = time.time()
-print()
-list_of_questions = [
-            "which documents are required to apply for a claim?",
-            "How many types of vaccination are available for children of age group between one to twelve years?",
-            "What is the name and address of company providing insurance ?",
-            "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
-            "What is the waiting period for pre-existing diseases (PED) to be covered?",
-            "Does this policy cover maternity expenses, and what are the conditions?",
-            "What is the waiting period for cataract surgery?",
-            "Are the medical expenses for an organ donor covered under this policy?",
-            "What is the No Claim Discount (NCD) offered in this policy?",
-            "Is there a benefit for preventive health check-ups?",
-            "How does the policy define a 'Hospital'?",
-            "What is the extent of coverage for AYUSH treatments?",
-            "Are there any sub-limits on room rent and ICU charges for Plan A?"
-    ]
 
-for query in list_of_questions:
-    initial_state = AgentState({'messages':[HumanMessage(content=query)]})
-    response = app.invoke(initial_state)
-    print(response['messages'][-1].content)
-print(time.time()-start)
+# Asynchronous orchestrator setup
+async def process_query(query: str) -> Tuple[str, str]:
+    """
+    Asynchronously process a single query through the graph with increased recursion limit.
+
+    Returns:
+        A tuple of (query, answer).
+    """
+    initial_state = AgentState({'messages': [HumanMessage(content=query)]})
+    # Use custom recursion limit for deep workflows
+    result = await asyncio.to_thread(lambda: app.invoke(initial_state, config={"recursion_limit": 500}))
+    return query, result['messages'][-1].content
+
+async def parallel_orchestrator(queries: List[str]) -> Dict[str, str]:
+    """
+    Run multiple queries in parallel and return their answers.
+    """
+    tasks = [process_query(q) for q in queries]
+    completed = await asyncio.gather(*tasks)
+    return dict(completed)
+
+if __name__ == '__main__':
+    # Example queries to run in parallel
+    list_of_questions = [
+        "which documents are required to apply for a claim?",
+        "How many types of vaccination are available for children of age group between one to twelve years?",
+        "What is the name and address of company providing insurance ?",
+        "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+        "What is the waiting period for pre-existing diseases (PED) to be covered?",
+        "Does this policy cover maternity expenses, and what are the conditions?",
+        "What is the waiting period for cataract surgery?",
+        "Are the medical expenses for an organ donor covered under this policy?",
+        "What is the No Claim Discount (NCD) offered in this policy?",
+        "Is there a benefit for preventive health check-ups?",
+        "How does the policy define a 'Hospital'?",
+        "What is the extent of coverage for AYUSH treatments?",
+        "Are there any sub-limits on room rent and ICU charges for Plan A?"
+    ]
+    start = time.time()
+    responses = asyncio.run(parallel_orchestrator(list_of_questions))
+    save_responses(responses)
+    print(json.dumps(responses, indent=2))
+    print(f"Total time: {time.time() - start:.2f}s")
