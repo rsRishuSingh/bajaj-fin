@@ -16,7 +16,7 @@ model = SentenceTransformer(MODEL_NAME)
 
 qdrant_client = QdrantClient(
     url=os.getenv("QDRANT_URL"),
-    api_key=os.getenv("QDRANT_API"),
+    api_key=os.getenv("QDRANT_API_KEY"),
 )
 
 BATCH_SIZE = 128 # Process 128 documents at a time
@@ -115,17 +115,17 @@ if __name__ == "__main__":
     print("Started")
 
     begin = time.time()
-    start = time.time()
-    docs = extract_chunks_from_pdf("Policy.pdf",1000, 200)
-    print("Time Taken in Chunking: ", time.time()-start)
+    # start = time.time()
+    # docs = extract_chunks_from_pdf("Policy.pdf",1000, 200)
+    # print("Time Taken in Chunking: ", time.time()-start)
 
-    start = time.time()
-    create_collection(COLLECTION_NAME)
-    print("Time Taken in Creating database: ",time.time()-start)
+    # start = time.time()
+    # create_collection(COLLECTION_NAME)
+    # print("Time Taken in Creating database: ",time.time()-start)
 
-    start = time.time()
-    insert_data_in_batches(docs, COLLECTION_NAME)
-    print("Time Taken in inserting chunks: ",time.time()-start)
+    # start = time.time()
+    # insert_data_in_batches(docs, COLLECTION_NAME)
+    # print("Time Taken in inserting chunks: ",time.time()-start)
     
     
     list_of_questions = [
@@ -147,6 +147,7 @@ if __name__ == "__main__":
     start = time.time()
     for query in list_of_questions:
         context = search_similar_chunks(query, COLLECTION_NAME,3)
+        print(context)
         generate_answer(query, context)
     
     print("Time Taken in answering all the query: ",time.time()-start)

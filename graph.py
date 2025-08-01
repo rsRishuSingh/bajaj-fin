@@ -2,8 +2,7 @@ import sys
 import os
 import json
 import time
-import requests
-import numpy as np
+
 import asyncio
 from typing import List, Annotated, Sequence, TypedDict, Dict, Tuple
 from dotenv import load_dotenv
@@ -11,7 +10,7 @@ from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 # Use the updated AzureChatOpenAI from langchain-openai (supports bind_tools)
 from langchain_openai import AzureChatOpenAI
-from langchain_core.messages import BaseMessage, SystemMessage, HumanMessage, AIMessage
+from langchain_core.messages import BaseMessage, SystemMessage, HumanMessage
 from langchain_core.tools import tool
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode
@@ -45,9 +44,6 @@ llm = AzureChatOpenAI(
     max_tokens=150,
 )
 
-# Configuration constants
-COLLECTION_NAME = os.getenv("COLLECTION_NAME", "my_document_store_31")
-
 # Initialize embedding model
 embedder = SentenceTransformer(os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2"))
 
@@ -66,11 +62,15 @@ class AgentState(TypedDict):
     Attributes:
         messages: Conversation history (BaseMessage sequence).
     """
+
+    collection_name: str
+    query: str
     messages: Annotated[Sequence[BaseMessage], add_messages]
 
-# Hybrid search tool definition
+
+
 @tool
-def hybrid_search(query: str, top_k: int = 3) -> List[str]:
+def hybrid_search(query: str, collection_name: str, top_k: int = 5) -> List[str]:
     """
     Perform hybrid retrieval combining vector search over Qdrant.
 
@@ -80,17 +80,30 @@ def hybrid_search(query: str, top_k: int = 3) -> List[str]:
 
     Returns:
         List of retrieved context strings.
-    """
-    print(f"🔍 Hybrid searching for: '{query}'")
-    vector = embedder.encode(query).tolist()
-    result = qdrant_client.query_points(
-        collection_name=COLLECTION_NAME,
-        query=vector,
-        limit=top_k
-    )
-    contexts = [pt.payload.get('text', '') for pt in result.points]
-    append_to_response([{"hybrid_search": contexts}], filename="graph_logs.json")
-    return contexts or ["No relevant context found."]
+    """ 
+    print(f"\n🔍 Searching for: '{query}'")
+    try:
+        # 1. Convert the query text to a vector
+        query_vector = embedder.encode(query).tolist()
+        
+        # 2. Use the 'query_points' method with the 'query' parameter
+        search_result = qdrant_client.query_points(
+            collection_name=collection_name,
+            query=query_vector,
+            limit=top_k
+        )
+        
+        contexts = [point.payload['text'] for point in search_result.points]
+        append_to_response([{"hybrid_search_success": contexts}], filename="graph_logs.json")
+        
+        return contexts or ["No relevant context found."]
+    except Exception as e:
+        error_message = f"An error occurred in hybrid_search: {str(e)}"
+
+        append_to_response([{"hybrid_search_error": error_message}], filename="graph_logs.json")
+        
+        return [error_message]
+
 
 # Bind hybrid_search tool to LLM
 check_query_LLM = llm.bind_tools([hybrid_search])
@@ -111,7 +124,7 @@ def check_query_agent(state: AgentState) -> AgentState:
             "\nDo not change query"
         )
     )
-    query = state['messages'][-1]
+    query = state["query"]
     append_to_response([{"query_agent_in": query}], filename="graph_logs.json")
 
     response = check_query_LLM.invoke([system, query])
@@ -170,8 +183,10 @@ def answer_query(state: AgentState) -> AgentState:
     prompt = SystemMessage(
         content=(
             "You are a RAG assistant in legal, insurance, contract, policy domains which buildis the final response to answer user query." 
-            "\nGive to the point answer from the context and do not drift away from main query "
+            "\nGive to the point answer from retrieved context from hybrid_search tool only"
+            "\nDo not drift away from main query "
             "\nDo not hallicunate and acknowledge any missing data."
+            "\nIf not relevent context retrieved Tell the same to user"
             f"\nContext: {get_context(state,20)}"
             "\nResponse format must be like:\n<response here>"
         )
@@ -194,17 +209,21 @@ graph.add_node('answer_query', answer_query)
 def route_query(state: AgentState) -> str:
     last_msg = state["messages"][-1]
     calls = getattr(last_msg, "additional_kwargs", {}).get("tool_calls", [])
+    
     if calls and calls[0].get("function", {}).get("name", "") == "hybrid_search":
         return "hybrid_search_tool"
     response = (last_msg.content or "").lower()
+    
     if any(x in response for x in ("insufficient", "ambiguous")):
         return "answer_query"
     return "hybrid_search_tool"
 
 def route_context(state: AgentState) -> str:
     response = (state["messages"][-1].content or "").lower()
+    
     if "answer_query" in response:
         return "answer_query"
+    
     if "expand_query" in response:
         return "expand_query"
     return "answer_query"
@@ -228,45 +247,30 @@ graph.add_edge("answer_query",END)
 app = graph.compile()
 
 # Asynchronous orchestrator setup
-async def process_query(query: str) -> Tuple[str, str]:
+async def process_query(query: str, collection_name: str) -> Tuple[str, str]:
     """
     Asynchronously process a single query through the graph with increased recursion limit.
 
     Returns:
         A tuple of (query, answer).
     """
-    initial_state = AgentState({'messages': [HumanMessage(content=query)]})
+    initial_state = AgentState({'messages': [HumanMessage(content=query)], "query":query, "collection_name":collection_name})
     # Use custom recursion limit for deep workflows
     result = await asyncio.to_thread(lambda: app.invoke(initial_state, config={"recursion_limit": 500}))
     return query, result['messages'][-1].content
 
-async def parallel_orchestrator(queries: List[str]) -> Dict[str, str]:
+async def parallel_orchestrator(queries: List[str], collection_name: str) -> Dict[str, str]:
     """
     Run multiple queries in parallel and return their answers.
     """
-    tasks = [process_query(q) for q in queries]
+    tasks = [process_query(q,collection_name) for q in queries]
     completed = await asyncio.gather(*tasks)
     return dict(completed)
 
-if __name__ == '__main__':
-    # Example queries to run in parallel
-    list_of_questions = [
-        "which documents are required to apply for a claim?",
-        # "How many types of vaccination are available for children of age group between one to twelve years?",
-        # "What is the name and address of company providing insurance ?",
-        # "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
-        # "What is the waiting period for pre-existing diseases (PED) to be covered?",
-        # "Does this policy cover maternity expenses, and what are the conditions?",
-        # "What is the waiting period for cataract surgery?",
-        # "Are the medical expenses for an organ donor covered under this policy?",
-        # "What is the No Claim Discount (NCD) offered in this policy?",
-        # "Is there a benefit for preventive health check-ups?",
-        # "How does the policy define a 'Hospital'?",
-        # "What is the extent of coverage for AYUSH treatments?",
-        # "Are there any sub-limits on room rent and ICU charges for Plan A?"
-    ]
+def graph_orchestrator_run(list_of_questions: List[str], collection_name: str)->Dict[str, str]:
+
     start = time.time()
-    responses = asyncio.run(parallel_orchestrator(list_of_questions))
-    save_responses(responses)
-    print(json.dumps(responses, indent=2))
-    print(f"Total time: {time.time() - start:.2f}s")
+    responses = asyncio.run(parallel_orchestrator(list_of_questions,collection_name))
+    print("Graph Ended in: ",time.time()-start)
+    return responses
+
