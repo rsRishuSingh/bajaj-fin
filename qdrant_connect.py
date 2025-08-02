@@ -9,6 +9,7 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning, module="torch")
 
 load_dotenv()
+
 embedder = SentenceTransformer(os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2"))
 
 qdrant_client = QdrantClient(
@@ -16,7 +17,7 @@ qdrant_client = QdrantClient(
     api_key=os.getenv("QDRANT_API_KEY"),
 )
 
-BATCH_SIZE = 128 # Process 128 documents at a time
+BATCH_SIZE = 256 # Process 128 documents at a time
 
 def create_collection(collection_name):
     """Ensures the Qdrant collection exists with the correct configuration."""
@@ -81,7 +82,7 @@ def insert_data_in_batches(docs, collection_name)->bool:
             return False
             
         #small delay to avoid overwhelming the server
-        time.sleep(0.1)
+        time.sleep(0.05)
 
     print("All data has been processed.")
     return True

@@ -1,0 +1,54 @@
+[
+  {
+    "answer_query": "Yes, the policy covers maternity expenses, including pre-natal and post-natal hospitalization expenses per delivery, and necessary vaccination for the newborn baby, subject to the following conditions:\n\n1. The female insured person must have been continuously covered under the policy for at least 24 months before availing of this benefit.\n2. The coverage is limited to two deliveries or lawful medical terminations of pregnancy under the policy and its renewals.\n3. Coverage includes medical treatment expenses traceable to childbirth (including complicated deliveries and caesarean sections) incurred during hospitalization, as well as lawful medical termination of pregnancy during the policy period.\n4. Ectopic pregnancy is covered under \"In-patient treatment,\" provided it is established by medical reports.\n5.",
+    "timestamp": "2025-08-02T13:56:59.816308+05:30"
+  },
+  {
+    "expand_query": "<Optimised Query: \"criteria and definition of 'Hospital' in insurance policies OR how 'Hospital' is classified and described in health insurance documents OR insurance policy explanation of 'Hospital' qualifications and standards\">",
+    "timestamp": "2025-08-02T13:56:59.971440+05:30"
+  },
+  {
+    "expand_query": "<Optimised Query: grace period and premium payment terms for National Parivar Mediclaim Plus Policy by National Insurance Co. Ltd., including renewal, break in policy, and cancellation conditions>",
+    "timestamp": "2025-08-02T13:57:00.075344+05:30"
+  },
+  {
+    "answer_query": "The waiting period for cataract surgery under health insurance policy terms is not explicitly mentioned in the retrieved context. Typically, waiting periods for specific treatments, including cataract surgery, may vary depending on the insurance provider and the policy terms. For detailed information, you would need to review the specific policy document or consult directly with the insurance provider.",
+    "timestamp": "2025-08-02T13:57:00.382413+05:30"
+  },
+  {
+    "check_content": "expand_query",
+    "timestamp": "2025-08-02T13:57:00.407368+05:30"
+  },
+  {
+    "answer_query": "Insurance coverage for AYUSH treatments includes:\n\n1. **Coverage Scope**:\n   AYUSH treatments refer to medical and/or hospitalization interventions under Ayurveda, Yoga and Naturopathy, Unani, Siddha, and Homeopathy systems.\n\n2. **Eligibility Criteria**:\n   - Treatment must be provided in an AYUSH Hospital or Day Care Centre.\n   - AYUSH Hospitals can be Central/State Government facilities, teaching hospitals attached to AYUSH colleges recognized by relevant councils, or standalone/co-located hospitals registered with local authorities.\n\n3. **Hospitalization Requirements**:\n   The AYUSH Hospital must:\n   - Have at least 5 inpatient beds.\n   - Be supervised round the clock by a qualified AYUSH Medical Practitioner.\n   - Maintain dedicated",
+    "timestamp": "2025-08-02T13:57:01.510034+05:30"
+  },
+  {
+    "check_content": "answer_query",
+    "timestamp": "2025-08-02T13:57:06.936830+05:30"
+  },
+  {
+    "expand_query": "<Optimised Query: benefits, eligibility requirements, coverage details, exclusions, and tax advantages for preventive health check-ups under various health insurance policies>",
+    "timestamp": "2025-08-02T13:57:08.279663+05:30"
+  },
+  {
+    "answer_query": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy by National Insurance Co. Ltd. is the duration allowed after the premium renewal date during which the premium can still be paid without a break in policy. If the premium is not paid within this grace period, a break in policy occurs, leading to a lapse in coverage. Specific details about the exact duration of the grace period are not provided in the retrieved context.",
+    "timestamp": "2025-08-02T13:57:08.417514+05:30"
+  },
+  {
+    "check_content": "answer_query",
+    "timestamp": "2025-08-02T13:57:08.765239+05:30"
+  },
+  {
+    "check_content": "answer_query",
+    "timestamp": "2025-08-02T13:57:08.791045+05:30"
+  },
+  {
+    "answer_query": "The retrieved context does not contain a specific definition or detailed criteria for 'Hospital' within the insurance policy. If you need further information, you may need to consult the policy documents directly or provide more specific details for clarification.",
+    "timestamp": "2025-08-02T13:57:09.523857+05:30"
+  },
+  {
+    "answer_query": "The retrieved context does not provide specific details regarding the benefits, eligibility requirements, coverage details, exclusions, or tax advantages for preventive health check-ups under health insurance policies. If you need information on this specific topic, please provide additional input or clarify the query further.",
+    "timestamp": "2025-08-02T13:57:09.893080+05:30"
+  }
+]

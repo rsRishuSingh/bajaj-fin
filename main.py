@@ -4,6 +4,7 @@ from chunking import process_and_chunk_pdf
 from qdrant_connect import create_collection, insert_data_in_batches
 from graph_orchestrator import graph_orchestrator_run
 from question_list import list_of_questions
+from utility import save_responses
 
 def main() -> None:
     """Executes the full RAG pipeline from a JSON input file and returns the results."""
@@ -25,7 +26,7 @@ def main() -> None:
     print("Chunks created in: ", time.time()-start)
 
 
-    collection_name = "my_document_store_40"
+    collection_name = "my_document_store_45"
 
     start = time.time()
     is_created = create_collection(collection_name)
@@ -39,8 +40,9 @@ def main() -> None:
     print("Chunks insert in: ", time.time()-start)
 
     start = time.time()
-    response = graph_orchestrator_run(list_of_questions, collection_name)
-    print("Query status: ", len(response))
+    responses = graph_orchestrator_run(list_of_questions, collection_name)
+    save_responses(responses)
+    print("Query status: ", len(responses))
     print("Query answered in: ", time.time()-start)
 
     print("Total time taken: ",time.time()-begin)
