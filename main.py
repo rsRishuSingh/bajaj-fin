@@ -6,7 +6,7 @@ from chunking import process_and_chunk_pdf
 from async_qdrant import create_collection, insert_data_parallel, delete_collection
 from graph_orchestrator import parallel_orchestrator
 from question_list import list_of_questions
-from utility import save_responses
+from utility import save_responses_append
 import asyncio
 
 async def main() -> None:
@@ -44,7 +44,7 @@ async def main() -> None:
 
     start = time.time()
     responses = await parallel_orchestrator(list_of_questions, collection_name)
-    save_responses(responses)
+ 
     print("Query status: ", len(responses))
     print("Query answered in: ", time.time()-start)
 
@@ -52,9 +52,11 @@ async def main() -> None:
 
     os.remove('temp.pdf')
     print("Deleted PDF")
-
+    
     is_deleted = await delete_collection(collection_name)
     print("Connection deleted status: ", is_deleted)
+
+    save_responses_append(responses)
 
     
 asyncio.run(main())

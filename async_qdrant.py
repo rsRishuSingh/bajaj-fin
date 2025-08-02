@@ -18,7 +18,7 @@ async_client = AsyncQdrantClient(
     api_key=os.getenv("QDRANT_API_KEY"),
 )
 
-BATCH_SIZE = 48      # Number of docs per batch
+BATCH_SIZE = 36     # Number of docs per batch
 MAX_CONCURRENT = 6    # Number of parallel upsert tasks
 
 async def create_collection(collection_name: str) -> bool:
@@ -28,7 +28,7 @@ async def create_collection(collection_name: str) -> bool:
         # Try retrieving collection info; exception if not exists
         await async_client.get_collection(collection_name=collection_name)
         print(f"Collection '{collection_name}' already exists.")
-    except Exception:
+    except Exception as e:
         print(f"Creating collection '{collection_name}'...")
         await async_client.create_collection(
             collection_name=collection_name,
@@ -105,8 +105,8 @@ async def insert_data_parallel(docs, collection_name: str) -> bool:
         await asyncio.gather(*tasks)
         print("All data has been processed.")
         return True
-    except Exception:
-        print("Insertion terminated due to errors.")
+    except Exception as e:
+        print("Insertion terminated due to errors.",e)
         return False
 
 # Run example:
