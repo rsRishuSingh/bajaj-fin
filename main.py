@@ -26,7 +26,7 @@ async def main() -> None:
 
 
     start = time.time()
-    all_chunks = process_and_chunk_pdf(chunk_size=1200)
+    all_chunks = process_and_chunk_pdf(chunk_size=500)
     print("Chunks status: ", len(all_chunks))
     print("Chunks created in: ", time.time()-start)
 

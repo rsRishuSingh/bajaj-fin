@@ -18,8 +18,8 @@ async_client = AsyncQdrantClient(
     api_key=os.getenv("QDRANT_API_KEY"),
 )
 
-BATCH_SIZE = 36     # Number of docs per batch
-MAX_CONCURRENT = 6    # Number of parallel upsert tasks
+BATCH_SIZE =  64    # Number of docs per batch
+MAX_CONCURRENT = 4    # Number of parallel upsert tasks
 
 async def create_collection(collection_name: str) -> bool:
     """Ensure the Qdrant collection exists with the correct configuration."""
@@ -69,6 +69,7 @@ async def _upsert_batch(collection_name: str, batch_docs) -> None:
         collection_name=collection_name,
         points=points,
         wait=True
+
     )
 
 async def insert_data_parallel(docs, collection_name: str) -> bool:
@@ -96,7 +97,8 @@ async def insert_data_parallel(docs, collection_name: str) -> bool:
                     elapsed = time.perf_counter() - t0
                     print(f"  - Batch {batch_idx} uploaded in {elapsed:.2f}s")
                 except Exception as e:
-                    print(f"  - Error in batch {batch_idx}: {e}")
+                    # Use repr(e) to get the full, unambiguous error message
+                    print(f"  - Error in batch {batch_idx}: {repr(e)}")
                     raise
 
         tasks.append(worker(batch))

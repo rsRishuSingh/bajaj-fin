@@ -333,5 +333,1097 @@
             "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
             "answer": "Yes, under Plan A, there are sub-limits on room rent and ICU charges. Room charges are capped at up to 1% of the sum insured (SI) per day or the actual cost, whichever is lower. ICU charges are capped at up to 2% of the SI per day or the actual cost, whichever is lower. However, these limits do not apply if the treatment is part of a listed procedure under a Preferred Provider Network (PPN) package."
         }
+    ],
+    "response_6": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is the duration provided to avoid policy break due to non-payment of premium before the renewal date or within the grace period. Specific details about the exact duration are not available in the provided context."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage from the date of inception of the first policy, subject to terms and conditions."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including pre-natal and post-natal hospitalization per delivery, subject to conditions such as continuous coverage for 24 months, age restrictions (18-45 years), and limits on the number of deliveries or terminations. Additional exclusions apply, such as surrogate mother expenses and specific waiting periods."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery coverage under health insurance policies in India typically varies, but specific procedures like cataract may involve a waiting period of 1 year as per certain policies or conditions."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Yes, the policy covers the medical expenses incurred during the organ donor's hospitalization for harvesting the organ, provided it complies with specific conditions under the Transplantation of Human Organs Act 1994 and the insured person is undergoing a medically advised transplant. However, pre-hospitalization, post-hospitalization expenses, and certain other costs are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The No Claim Discount (NCD) offered is a flat 5% on the base premium for one-year policies if no claims are reported in the expiring policy. For policies exceeding one year, the NCD is aggregated per claim-free year but capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups are reimbursed under certain health insurance policies, typically after a specified policy period (e.g., every 2 years) and if the policy is continuously renewed without breaks."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy does not explicitly define 'Hospital' in the provided context but mentions terms like 'hospitalisation,' which requires admission for a minimum of 24 consecutive inpatient care hours, and related aspects such as ICU charges and room rent policies. If further specifics are needed, they are not included in the retrieved data."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments are covered in insurance if provided at AYUSH Hospitals or Day Care Centres meeting specific criteria, such as having 5 in-patient beds, qualified AYUSH practitioners round the clock, dedicated therapy sections, and maintaining daily records accessible to insurers."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, room rent is limited to 1% of the Sum Insured (SI) per day or actuals, whichever is lower, and ICU charges are limited to 2% of the SI per day or actuals, whichever is lower."
+        }
+    ],
+    "response_7": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is the time allowed beyond the premium renewal date to make the payment before the policy lapses. However, the specific duration of the grace period is not mentioned in the retrieved context."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is 36 months of continuous coverage from the policy's inception, provided the condition was declared and accepted at the time of application."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "The policy covers maternity expenses, including pre-natal and post-natal hospitalization, subject to a 24-month waiting period of continuous coverage. It excludes coverage for females below 18 or above 45 years, more than two deliveries/terminations, and certain other conditions."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under insurance policies typically falls under a one-year waiting period, as mentioned in some policy terms. However, this can vary based on the insurer and specific policy conditions."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor are covered under the policy if the organ donation complies with the Transplantation of Human Organs Act 1994, is used for an insured person advised to undergo a transplant, and the donor is hospitalized as an in-patient. However, expenses such as pre/post-hospitalization costs, organ acquisition, and complications from harvesting are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The No Claim Discount (NCD) offered in this policy is a flat 5% on the base premium for one-year policies, provided no claims are reported in the expiring policy. For policies exceeding one year, the NCD is aggregated for each claim-free year but will not exceed 5% of the total base premium for the policy term."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups offer benefits such as early detection of health issues, improved health outcomes, and potential reimbursement under certain health insurance policies, often provided after continuous policy renewal for specific periods."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as an institution providing inpatient care, intensive care units for critical conditions, and associated healthcare services under the supervision of qualified medical practitioners, including facilities for monitoring and life support."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments are covered when provided in AYUSH hospitals approved by the Central or State Government, or registered facilities under the supervision of qualified AYUSH practitioners, complying with specific criteria like having at least 5 in-patient beds and maintaining daily patient records."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, room charges are limited to 1% of the Sum Insured per day, and ICU charges are limited to 2% of the Sum Insured per day, or the actual cost, whichever is lower."
+        }
+    ],
+    "response_8": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage after the policy's inception, provided they are declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "This policy covers maternity expenses, including medical treatment for childbirth, pre-natal and post-natal hospitalization, and lawful medical termination of pregnancy. However, conditions include a waiting period of 24 months, coverage for female insured persons aged 18-45, and limits on the number of claims to two deliveries or terminations."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under health insurance policies typically ranges from one year, subject to the terms and conditions specified in the policy."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "The policy covers medical expenses for an organ donor's hospitalization during the harvesting of the organ, provided the donation complies with the Transplantation of Human Organs Act 1994, the organ is used for the insured person, and the claim is admitted under the In-patient Treatment Section. Pre- and post-hospitalization expenses, acquisition costs, and experimental procedures are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The No Claim Discount (NCD) offered in this policy is a flat 5% on the base premium if no claims are reported during the policy term. For multi-year policies, the NCD is aggregated based on each claim-free year, capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in health insurance policies often provide financial incentives like health check-up reimbursements (e.g., up to INR 5,000-10,000 every 2 years) and no-claim discounts (e.g., 5% discount on base premium every 2 years). Pre-policy check-ups may also be required for certain covers like critical illness."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy does not provide a specific definition of a 'Hospital' within the retrieved context but mentions terms like in-patient care, intensive care units, and room charges in relation to medical facilities."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "The extent of coverage for AYUSH treatments (Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy) typically includes in-patient hospitalization and treatments under recognized AYUSH systems. Coverage often requires treatment at an AYUSH hospital that meets specific criteria such as having at least 5 in-patient beds, round-the-clock qualified AYUSH practitioners, and maintaining patient records."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limits on room rent and ICU charges are as follows: Room rent is capped at up to 1% of the Sum Insured (SI) or actual costs, whichever is lower, and ICU charges are capped at up to 2% of the SI or actual costs, whichever is lower."
+        }
+    ],
+    "response_9": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days. Coverage is not available during the grace period."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage, provided the condition is declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "The policy covers maternity expenses, including pre-natal and post-natal hospitalization, childbirth (normal and cesarean), and lawful medical termination of pregnancy, but excludes coverage for female insured persons below 18 or above 45 years, deliveries/terminations within a 24-month waiting period (except in certain cases), and more than two deliveries or terminations."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under health insurance policies can vary, but typically falls under a specified disease/procedure exclusion, which may require continuous coverage for up to one or two years depending on the policy terms. Specific limits and exclusions apply as outlined in the policy."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Yes, the policy covers the medical expenses incurred during the hospitalization of an organ donor for organ harvesting, provided it complies with the Transplantation of Human Organs Act, 1994, and the claim is admitted under the In-patient Treatment Section for the insured person undergoing the transplant. However, pre- and post-hospitalization expenses, donor complications, and organ transportation costs are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The No Claim Discount (NCD) offered in this policy is a flat 5% on the base premium, provided no claims are reported in the expiring policy."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups can provide benefits like early detection of diseases, potential cost savings on treatments, and, in some cases, reimbursement under health policies after continuous renewal for specific periods. Some policies also incentivize them through discounts or tax benefits."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "A 'Hospital' is defined as any institution established for in-patient care and day care treatment of disease/injuries and registered as a hospital with local authorities under the Clinical Establishments (Registration and Regulation) Act, 2010 or relevant laws."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "Insurance coverage for AYUSH treatments typically includes medical expenses for inpatient care under Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems. AYUSH hospitals must meet specific criteria, such as having qualified practitioners, inpatient beds, therapy sections, and maintaining patient records. Outpatient treatments are generally not covered, and exclusions may apply for alternative therapies like massages and steam baths."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, sub-limits on room rent are up to 1% of the sum insured (SI) or actual expenses per day, whichever is lower, and for ICU charges, it is up to 2% of the SI or actual expenses per day, whichever is lower."
+        }
+    ],
+    "response_10": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days. Coverage is not available during the grace period."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage after the date of inception of the first policy."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "The policy covers maternity expenses, including pre-natal and post-natal hospitalization, childbirth (normal and caesarean), and lawful medical termination of pregnancy, subject to conditions like a 24-month waiting period and coverage for up to two deliveries. It excludes claims for insured persons below 18 or above 45 years of age and surrogate mothers."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under insurance policies can vary. Typically, it falls under a specified disease/procedure waiting period, which may range from 90 days to 3 years of continuous coverage, depending on the policy terms. Check your specific policy for details."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor's hospitalization during the organ harvesting process are covered, provided the procedure complies with the Transplantation of Human Organs Act, 1994, and the claim is under the In-patient Treatment Section for the insured person undergoing the transplant. Pre/post-hospitalization expenses, organ acquisition costs, and related complications are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of 5% on the base premium is offered on renewal if no claims were reported in the expiring policy. For policies exceeding one year, the NCD is aggregated for each claim-free year, capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in health insurance policies offer benefits such as early disease detection, potential tax benefits under Section 80D of the Income Tax Act, and reimbursement of health check-up expenses after continuous policy renewal (e.g., every 2 years). Additionally, they may be required for critical illness coverage eligibility or to avail incentives like No Claim Discounts."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as any institution established for in-patient care and day care treatment of diseases/injuries, registered under the Clinical Establishments (Registration and Regulation) Act, 2010, or under applicable local authority regulations."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "The extent of coverage for AYUSH treatments includes medical expenses for inpatient care under Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems, provided they are administered in recognized AYUSH hospitals or facilities under qualified practitioners."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limits on room rent and ICU charges are as follows: Room rent is limited to 1% of the Sum Insured (SI) per day or actual costs, whichever is lower, and ICU charges are limited to 2% of the SI per day or actual costs, whichever is lower."
+        }
+    ],
+    "response_11": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The National Parivar Mediclaim Plus Policy provides a grace period for premium payment, beyond which a break in the policy occurs, resulting in a loss of continuity benefits for specific waiting periods and moratorium periods. However, the exact length of the grace period is not specified in the retrieved context."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for coverage of pre-existing diseases (PED) is 36 months of continuous policy coverage, provided the condition was disclosed and accepted at the time of application."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including pre-natal and post-natal hospitalization, childbirth, and lawful medical termination of pregnancy. Conditions include a waiting period of 24 months, coverage limited to insured females aged 18-45, and a maximum of two deliveries or terminations under the policy."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under most health insurance policies is typically two years from the policy inception date."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor are covered under the policy for hospitalization incurred during the organ harvesting, provided it complies with the Transplantation of Human Organs Act and benefits are admitted under the In-patient Treatment Section. However, pre-hospitalization, post-hospitalization expenses, organ acquisition costs, transportation, preservation, or experimental treatments are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of flat 5% on the base premium is offered on renewal if no claims are reported in the expiring policy. For policies exceeding one year, the NCD is aggregated for each claim-free year but capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in health insurance policies often reimburse expenses at the end of a block of two continuous policy years, provided the policy has been renewed without a break. Coverage limits and reimbursement conditions vary by policy, and waiting periods for pre-existing conditions may apply."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "A 'Hospital' is defined as an institution established for in-patient and day care treatment of diseases/injuries, registered under the Clinical Establishments Act, 2010 or similar regulations, with qualified nursing staff round the clock, and at least ten inpatient beds in towns with populations under ten lakhs."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments are covered for inpatient care under Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems, up to the sum insured limit specified in the policy schedule, provided treatment is undertaken at an AYUSH Hospital meeting specific criteria."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limits on room rent are up to 1% of the Sum Insured (SI) per day or actual charges, whichever is lower, and ICU charges are up to 2% of the SI per day or actual charges, whichever is lower."
+        }
+    ],
+    "response_12": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "No relevant context found."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "No relevant context found."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "No relevant context found."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "No relevant context found."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "No relevant context found regarding whether the insurance policy covers medical expenses for organ donors, including surgeries, post-operative care, and associated treatments."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "No relevant context found regarding the No Claim Discount (NCD) offered in this policy."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "No relevant context found."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "No relevant context found. Please refer directly to your insurance policy document for the exact definitions, criteria, inclusions, and exclusions related to 'Hospital' and 'Hospitalization.'"
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "No relevant context found."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "No relevant context found to determine sub-limits on room rent and ICU charges for Plan A. Please provide more details or specific policy information."
+        }
+    ],
+    "response_13": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is the time allowed for renewal after the due date without a break in coverage, though a specific duration is not mentioned in the retrieved context."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is 36 months of continuous coverage after the inception of the first policy, subject to the conditions specified in the policy."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including childbirth, pre-natal and post-natal hospitalization, and vaccination for the newborn. Conditions include a 24-month waiting period, coverage limited to two deliveries or terminations, and exclusion for insured persons under 18 or above 45 years."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "No relevant context found regarding the waiting period for cataract surgery coverage under insurance policies. Information may vary by provider, policy type, or region."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor's hospitalization during the organ harvesting process are covered under the policy, provided the donation complies with the Transplantation of Human Organs Act 1994 and the organ is donated to an insured person undergoing a medically advised transplant. However, pre-hospitalization, post-hospitalization, acquisition costs, experimental transplants, donor complications, and organ transportation/preservation expenses are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The policy offers a No Claim Discount (NCD) of 5% on the base premium upon renewal, provided no claims were reported in the previous policy term. For policies exceeding one year, the NCD is aggregated but capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "No relevant context found."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "A 'Hospital' is defined as any institution established for inpatient and daycare treatment, registered under the Clinical Establishments Act, 2010, or complying with criteria such as having qualified nursing staff round the clock and at least ten inpatient beds in towns with a population of less than ten lacs."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments are covered under health insurance policies, typically for inpatient care in recognized AYUSH hospitals or healthcare facilities meeting specific criteria. Outpatient treatments and alternative therapies like massages or steam baths are excluded. Coverage limits and specific terms vary by policy."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limits on room rent are 1% of the Sum Insured (SI) or actuals, whichever is lower, and for ICU charges, it is 2% of the SI or actuals, whichever is lower."
+        }
+    ],
+    "response_14": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "No relevant context is available regarding the grace period for premium payment under the National Parivar Mediclaim Plus Policy."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage under the policy."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including pre-natal and post-natal hospitalization, provided the insured woman has been continuously covered for at least 24 months. It excludes claims for women under 18 or over 45 years, more than two deliveries, and surrogate mothers unless specified."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery is typically two years from the inception of the health insurance policy, as specified under certain insurance plans."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Yes, the medical expenses for an organ donor's hospitalization are covered under the policy, provided the organ donation complies with the Transplantation of Human Organs Act 1994, the organ is for an insured person, and the claim is admitted under the in-patient treatment section for the organ transplant. However, pre-/post-hospitalization expenses, experimental transplants, and certain other exclusions apply."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The policy mentions that the No Claim Discount (NCD) does not affect the sum insured under Section 3.1 and remains unaffected by optional cover claims. Specific details on NCD terms and premium discounts are not provided in the retrieved content."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups are covered in certain health insurance policies, often as a floater benefit every two years, with limits ranging from INR 5,000 to INR 10,000 depending on the plan. Waiting periods and optional covers may apply as per specific policy terms."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "No relevant context available in the retrieved data to define 'Hospital' in health insurance policy terms, including criteria for hospitalisation and domiciliary hospitalisation."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments may be covered up to the selected sum insured in health policies. However, certain exclusions apply, such as treatments other than Allopathy/Modern medicine under specific outpatient policies. Always check the policy schedule for precise coverage details."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "Under Plan A, room rent is limited to 1% of the sum insured (SI) or actuals, whichever is lower, and ICU charges are capped at 2% of the SI or actuals, whichever is lower."
+        }
+    ],
+    "response_15": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is the time allowed after the premium due date before the policy lapses; however, the exact duration of the grace period is not specified in the retrieved context. Please refer to the policy document or contact the insurer for precise details."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) is 36 months of continuous coverage from the inception of the first policy, subject to terms and conditions."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses for female insured persons, including pre-natal and post-natal hospitalization, delivery (normal or caesarean), and lawful medical termination of pregnancy. However, there is a 24-month waiting period, and coverage is limited to two deliveries/terminations within the policy period."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under most health insurance policies in India is two years from the policy's inception, unless otherwise specified."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "The policy covers the medical expenses for the organ donor's hospitalization for organ harvesting, provided the donation complies with the Transplantation of Human Organs Act 1994, and the expenses are incurred as an in-patient in a hospital. However, pre-hospitalization and post-hospitalization expenses, acquisition costs, experimental treatments, or complications post-harvesting are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The No Claim Discount (NCD) offered in this policy is a flat 5% on the base premium upon renewal, provided no claims are reported in the expiring policy. For policies exceeding one year, the NCD is aggregated but does not exceed 5% of the total base premium for the policy term."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in health insurance policies can offer benefits such as reimbursement of expenses at the end of a block of two continuous policy years, provided the policy has been continuously renewed without a break. Coverage limits for health check-up expenses are subject to the table of benefits specified in the policy."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as an institution established for in-patient care and day care treatment of diseases/injuries, registered under the Clinical Establishments (Registration and Regulation) Act, 2010, or meeting specific criteria such as employing qualified nursing staff round the clock and having at least 10 inpatient beds in towns with a population of less than 10 lakhs."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments are covered for inpatient care expenses under Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems, up to the limit of the sum insured as specified in the policy schedule, provided the treatment is in an AYUSH hospital."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limit on room rent is up to 1% of the Sum Insured (SI) or actual, whichever is lower, and for ICU charges, it is up to 2% of the SI or actual, whichever is lower."
+        }
+    ],
+    "response_16": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The National Parivar Mediclaim Plus Policy defines a \"break in policy\" as any gap that occurs if the renewal premium is not paid on or before the due date or within the grace period. However, the exact duration of the grace period is not specified in the retrieved context."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) is generally 36 months of continuous coverage from the policy's inception, and it may be reduced based on prior coverage under portability norms."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including pre-natal and post-natal hospitalization, childbirth (including cesarean), and lawful medical termination of pregnancy. However, the insured must be continuously covered for at least 24 months, and the coverage is limited to two deliveries or terminations."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under most insurance policies is typically two years from the policy inception date, as per specified exclusions."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor are covered only for their hospitalization during the organ harvesting process, provided the organ donation adheres to the Transplantation of Human Organs Act 1994, and a claim is admitted for the insured undergoing the transplant. Pre- and post-hospitalization expenses or costs related to organ acquisition, transportation, or preservation are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The No Claim Discount (NCD) offered in this policy is a flat 5% on the base premium for a one-year term, provided no claims are reported in the expiring policy. For terms exceeding one year, the NCD is aggregated annually but capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in health insurance policies are often reimbursed after a block of two continuous policy years, irrespective of past claims, subject to specified limits. They may be eligible for tax rebates under Section 80D of the Income Tax Act. However, coverage and waiting periods vary by policy."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as an institution established for inpatient and daycare treatment of diseases/injuries, registered under the Clinical Establishments (Registration and Regulation) Act, 2010, or meeting specific criteria such as having round-the-clock qualified nursing staff and at least ten inpatient beds in towns with a population of less than ten lakhs."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "Coverage for AYUSH treatments includes inpatient care expenses for Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems, up to the sum insured as specified in the policy schedule, provided treatment is carried out in a recognized AYUSH hospital."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limit on room rent is up to 1% of the Sum Insured (SI) or actual, whichever is lower, and ICU charges are up to 2% of the SI or actual, whichever is lower."
+        }
+    ],
+    "response_17": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is not explicitly mentioned in the provided context. Please refer to the specific policy document or contact the insurer for accurate details."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for coverage of pre-existing diseases (PED) is 36 months of continuous coverage from the policy's inception, provided the condition was declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "The policy covers maternity expenses, including medical treatment for childbirth, pre-natal and post-natal hospitalization, lawful termination of pregnancy, and vaccination for the newborn, subject to conditions such as a waiting period of 24 months, age restrictions (18-45 years), and limits on the number of deliveries or terminations."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under most insurance policies is typically 36 months of continuous coverage. Please refer to your specific policy terms for confirmation."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor's hospitalization during the organ harvesting process are covered under the policy, provided the organ donation complies with the Transplantation of Human Organs Act 1994, and the insured person has an admitted claim for an organ transplant. Pre- and post-hospitalization expenses, complications post-harvesting, and organ acquisition costs are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The No Claim Discount (NCD) offered under this policy is a flat 5% on the base premium upon renewal, provided no claims were reported in the expiring policy. For policies exceeding one year, the NCD is aggregated for each claim-free year, not exceeding 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups can be reimbursed under certain health insurance policies at the end of two continuous policy years, provided the policy is renewed without a break. Expenses are subject to specified limits in the Table of Benefits."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "A 'Hospital' is defined as an institution established for in-patient or day-care treatment, registered under the Clinical Establishments (Registration and Regulation) Act, 2010, or meeting minimum criteria including round-the-clock qualified nursing staff, at least 10-15 inpatient beds depending on location, round-the-clock qualified medical practitioners, and a fully equipped operation theatre for surgical procedures."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments are covered for inpatient care under Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems, provided they are conducted in recognized AYUSH hospitals or facilities meeting specific criteria (e.g., minimum 5 inpatient beds, registered practitioners, and proper documentation). Outpatient treatments and certain alternative therapies may not be covered. Tax benefits under Section 80D of the Income Tax Act, 1961, can be availed for premiums paid."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limits on room rent are up to 1% of the Sum Insured (SI) or the actual amount, whichever is lower, and ICU charges are up to 2% of SI or the actual amount, whichever is lower."
+        }
+    ],
+    "response_18": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days. Coverage is not available during this period."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for Pre-Existing Diseases (PED) is typically 36 months of continuous coverage from the date of policy inception, provided the PEDs are declared and accepted at the time of application."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including childbirth (normal and caesarean), pre-natal, post-natal hospitalization, and lawful medical termination of pregnancy. Conditions include a 24-month waiting period, age limits (18-45 years), and coverage limited to two deliveries or terminations."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery typically depends on the insurance policy, ranging from 90 days to up to two years for specified diseases. Coverage limits and exclusions may apply, and treatment in a Preferred Provider Network (PPN) may be exempt from certain restrictions."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor's hospitalization during the organ harvesting process are covered, provided the procedure adheres to the Transplantation of Human Organs Act, 1994, and the claim has been admitted under the In-Patient Treatment Section. However, pre- and post-hospitalization expenses, donor organ acquisition costs, and complications related to harvesting are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The policy offers a No Claim Discount (NCD) of 5% on the base premium during renewal if no claims are reported in the expiring policy. For policies exceeding one year, NCD is aggregated for each claim-free year but capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups under insurance policies often provide benefits such as reimbursement of health check-up expenses after continuous renewals (e.g., every 2 years) and are not contingent on past claims. Tax benefits under Section 80D of the Income Tax Act may also apply for expenses incurred."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "A 'Hospital' is defined as any institution established for inpatient care and daycare treatment of diseases or injuries, registered with local authorities under the Clinical Establishments (Registration and Regulation) Act, 2010, or equivalent legislation."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "Health insurance typically covers AYUSH treatments (Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy) under inpatient care when provided at a registered AYUSH hospital or facility meeting specific criteria, including inpatient beds and qualified AYUSH practitioners. Coverage for outpatient treatments is generally not included."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, room rent is capped at up to 1% of the sum insured (SI) or actual, whichever is lower, and ICU charges are capped at up to 2% of the SI or actual, whichever is lower."
+        }
+    ],
+    "response_19": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days. Coverage is not available during the grace period."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage after the inception of the first policy, provided the conditions are declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including pre-natal and post-natal hospitalization, childbirth (normal and caesarean), lawful medical termination of pregnancy, and necessary vaccinations for newborns. However, coverage is subject to conditions like age restrictions (18-45 years), a waiting period of 24 months, and limits on the number of deliveries or terminations (up to two)."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under health insurance policies can typically vary. While some policies may not specify a waiting period, others may have a waiting period of 1-2 years depending on plan details, exclusions, and prior coverage conditions. Always refer to the specific policy's terms."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "The policy covers the medical expenses for an organ donor's hospitalization during the organ harvesting, provided the donation adheres to the Transplantation of Human Organs Act 1994 and its amendments. However, pre- and post-hospitalization expenses, costs related to organ acquisition, or complications arising from harvesting are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "The No Claim Discount (NCD) offered in this policy is a flat 5% on the base premium for claim-free policy years, with the maximum aggregate NCD capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in insurance policies often offer benefits such as reimbursement of expenses after continuous renewal, critical illness inclusion (with certain conditions), and potential health incentives like no-claim discounts. However, they may not include tax rebates under all covers and might involve waiting periods for pre-existing conditions."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as any institution established for in-patient care and day care treatment of diseases/injuries, registered as a hospital with local authorities under the Clinical Establishments (Registration and Regulation) Act, 2010, or equivalent."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "Insurance policies generally cover AYUSH treatments, including Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy, for inpatient care under qualified AYUSH practitioners in recognized hospitals. The extent of coverage varies by policy and may include medical and surgical expenses, but outpatient treatments or alternative therapies like massages may not be covered. Always review your specific policy terms for exact coverage details."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "Yes, Plan A has sub-limits on room rent and ICU charges: room rent is capped at up to 1% of the sum insured (SI) or actual cost, whichever is lower, and ICU charges are capped at up to 2% of the SI or actual cost, whichever is lower."
+        }
+    ],
+    "response_20": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days. Coverage is not available during this period."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage from the inception of the policy, provided the conditions were declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses for childbirth (including complicated deliveries and caesarean sections), lawful medical termination of pregnancy, pre-natal and post-natal hospitalization, and vaccination for a newborn baby (up to 3 months old). However, coverage is subject to conditions such as a waiting period of 24 months, age limits (18 to 45 years), and restrictions on the number of deliveries or terminations."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery in health insurance policies typically ranges from one year to two years, depending on the insurer and policy terms. Pre-existing disease coverage may require continuous coverage for 36 months, and treatment under Preferred Provider Network (PPN) might bypass certain limits or restrictions."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "The policy covers the medical expenses for an organ donor's hospitalization during the organ harvesting for an insured person, provided conditions such as compliance with the Transplantation of Human Organs Act 1994 are met. However, pre- and post-hospitalization expenses, as well as costs related to organ acquisition, transportation, or donor complications, are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of 5% on the base premium is offered on renewal of a one-year policy, provided no claims are reported in the expiring policy. For policies exceeding one year, the NCD accumulates for each claim-free year, capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in insurance policies often provide benefits such as reimbursement of health check-up expenses after continuous policy renewals (typically after two years), regardless of past claims, promoting early detection and better health management."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as an institution established for in-patient care and day care treatment of diseases/injuries, registered with local authorities under the Clinical Establishments (Registration and Regulation) Act, 2010, or a similar law."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "Health insurance policies generally cover AYUSH treatments (Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy) for inpatient care, provided treatments are undertaken in AYUSH hospitals meeting criteria like having 5 inpatient beds, round-the-clock qualified practitioners, and maintaining patient records. Coverage excludes outpatient treatments and alternative therapies like massages or steam baths."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "Yes, for Plan A, room rent is limited to up to 1% of the sum insured (SI) or the actual amount, whichever is lower, and ICU charges are limited to up to 2% of the SI or the actual amount, whichever is lower."
+        }
+    ],
+    "response_21": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days. Coverage is not available during this period."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage from the inception of the policy, provided the condition is declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, this policy covers maternity expenses, including pre-natal and post-natal hospitalization, childbirth, and lawful medical termination of pregnancy. However, it is subject to conditions like a 24-month waiting period, limited to two deliveries, and excludes surrogate mother expenses unless specified under infertility coverage."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery varies by policy but is generally outlined under specific disease or procedure exclusions, which may range from 1 to 2 years of continuous coverage. Some policies may waive this under Preferred Provider Network (PPN) conditions or for listed procedures."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor as an in-patient in a hospital during organ harvesting are covered, provided the organ donation complies with the Transplantation of Human Organs Act, and the claim is admitted under the In-patient Treatment Section for the insured person undergoing the transplant. Pre-hospitalization and post-hospitalization expenses for the donor are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of flat 5% is offered on the base premium on policy renewal, provided no claims are reported in the expiring policy. For policies exceeding one year, the NCD is aggregated for each claim-free year but does not exceed 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups provide benefits such as early detection of diseases, potential reimbursement under certain health insurance policies (e.g., expenses reimbursed after two continuous policy years), and eligibility for discounts like No Claim Discounts. However, tax rebates are not typically allowed for preventive care expenses."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "A 'Hospital' is defined as any institution established for in-patient care and day care treatment of diseases or injuries, registered with local authorities under the Clinical Establishments (Registration and Regulation) Act, 2010 or equivalent."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "The coverage for AYUSH treatments includes medical and hospitalization expenses for Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems, provided the treatments are conducted in AYUSH hospitals or facilities meeting specific criteria, such as having qualified practitioners, inpatient beds, therapy sections, and maintaining patient records."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, room rent is limited to 1% of the sum insured (SI) per day or actual charges, whichever is lower, and ICU charges are capped at 2% of the SI per day or actual charges, whichever is lower."
+        }
+    ],
+    "response_22": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage after the inception of the first policy, provided the PED is declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including pre-natal and post-natal hospitalization, childbirth-related medical treatment, and necessary vaccination for newborns. However, conditions include: the insured female must be between 18 and 45 years, a 24-month waiting period applies, and coverage is limited to two deliveries or lawful terminations."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under health insurance policies typically varies, but in some cases, it may be one year. Specific conditions and coverage under a Preferred Provider Network (PPN) could alter this, as details are subject to insurer policies and updates."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Yes, the policy covers the medical expenses for the organ donor's hospitalization during the organ harvesting procedure, provided that the conditions under the Transplantation of Human Organs Act 1994 are met, and the claim is admitted under the In-patient Treatment Section. However, pre-hospitalization and post-hospitalization expenses, donor's complications, and related costs are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of a flat 5% on the base premium is offered on renewal of policies with a one-year term, provided no claims are reported in the expiring policy. For policies exceeding one year, the NCD is aggregated based on each claim-free year but will not exceed 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in health insurance policies often offer benefits like discounted premiums (e.g., No Claim Discount), reimbursement for health check-ups (up to INR 5,000/7,500/10,000 every two years for floater plans), and early detection of health issues to reduce future medical expenses."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The retrieved context does not specifically define 'Hospital' but mentions related aspects like in-patient care requiring hospitalization for over 24 hours, ICU being a designated hospital area under constant medical supervision, and charges for room and boarding. No comprehensive definition of 'Hospital' is provided."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments are covered under health insurance policies if administered in AYUSH hospitals recognized by the Central/State Government or teaching hospitals attached to AYUSH colleges. The facility must meet criteria such as having in-patient beds, round-the-clock qualified AYUSH practitioners, specialized therapy sections, and maintaining daily patient records accessible to insurers."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the room rent is capped at up to 1% of the sum insured (SI) or actual, whichever is lower, and ICU charges are capped at up to 2% of SI or actual, whichever is lower."
+        }
+    ],
+    "response_23": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage after the inception of the first policy, provided the PEDs are declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including childbirth (normal and complicated deliveries), lawful medical termination of pregnancy, and pre-natal and post-natal hospitalization. Conditions include: a 24-month waiting period (except for accidents), coverage limited to two deliveries/terminations, female insured persons aged 18-45, and exclusions like surrogate maternity and ectopic pregnancy unless specified."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery typically falls under the specified disease/procedure waiting period of one year, depending on the terms of the insurance policy. For detailed applicability, reviewing the specific policy document is recommended."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "The policy covers the organ donor's medical expenses incurred during hospitalization for organ harvesting, provided it complies with the Transplantation of Human Organs Act 1994 and is for the insured person. However, it excludes pre- and post-hospitalization expenses, costs related to acquiring the organ, experimental transplants, donor complications post-harvesting, and organ transportation or preservation expenses."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of flat 5% on the base premium is offered on renewal of a one-year policy if no claims are reported during the expiring policy term. For policies exceeding one year, the NCD is aggregated for each claim-free year but cannot exceed 5% of the total base premium for the policy term."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in insurance policies can provide early detection of health issues and may be covered periodically, such as every 2 years, with benefits up to INR 5,000, 7,500, or 10,000 depending on the plan. Pre-policy check-ups are required for opting certain covers like critical illness, and no-claim discounts (e.g., 5% on base premium) are offered every 2 years as part of good health incentives."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as a facility equipped with an Intensive Care Unit (ICU) for critical care, provides room and boarding services, supports surgical procedures, and can deliver in-patient care requiring over 24-hour stays. It may also facilitate home care in specific situations like unavailable hospital beds or severe patient conditions."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "Insurance coverage for AYUSH treatments typically includes inpatient care under Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems, provided the treatment is administered in recognized AYUSH hospitals or healthcare facilities with appropriate infrastructure and qualified AYUSH practitioners."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limits on room rent are up to 1% of the Sum Insured (SI) per day or actual charges, whichever is lower, and for ICU charges, it is up to 2% of the SI per day or actual charges, whichever is lower."
+        }
+    ],
+    "response_24": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) to be covered is typically 36 months of continuous coverage, provided the PEDs were declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "This policy covers maternity expenses, including pre-natal and post-natal hospitalisation, necessary vaccinations for the newborn, and medical treatment related to childbirth. However, it excludes coverage for insured females below 18 or above 45 years, deliveries within a 24-month waiting period (except certain accidents), and is limited to two deliveries or terminations during the policy tenure."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery under insurance policies typically ranges from 1 to 2 years, depending on the terms specified in the policy. Please refer to your specific policy document for precise details."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor are covered under the policy during their hospitalization for organ harvesting, provided the donation adheres to the Transplantation of Human Organs Act, 1994, and the claim for the insured person undergoing the transplant is admitted. However, pre-hospitalization, post-hospitalization expenses, and costs related to organ transportation or preservation are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of 5% on the base premium is offered on policy renewal if no claims were reported in the expiring policy. For policies exceeding one year, the NCD is aggregated for each claim-free year, capped at 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in health insurance policies often provide incentives like reimbursement of expenses (e.g., up to INR 5,000-10,000) after every two years of continuous policy renewal. They may also reduce waiting periods for certain conditions with consistent coverage."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as any institution established for in-patient care and day care treatment of diseases/injuries, registered as a hospital with local authorities under the Clinical Establishments (Registration and Regulation) Act, 2010, or similar applicable laws."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "Insurance coverage for AYUSH treatments typically includes hospitalization and medical interventions under Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems in facilities recognized by central or state authorities, with specific requirements such as inpatient beds, qualified AYUSH practitioners, and therapy sections."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, room rent is capped at 1% of the sum insured (SI) or the actual cost, whichever is lower, and ICU charges are capped at 2% of the SI or the actual cost, whichever is lower."
+        }
+    ],
+    "response_25": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The grace period for premium payment under the National Parivar Mediclaim Plus Policy is 30 days."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for pre-existing diseases (PED) is generally 36 months of continuous coverage after the policy inception, provided the PEDs were declared during application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including medical treatment for childbirth, pre-natal and post-natal hospitalization, and lawful medical termination of pregnancy. However, coverage is subject to conditions such as age limits (18-45 years), a 24-month waiting period, and a limit of two deliveries or terminations."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery typically ranges between one to two years, depending on the specific insurance policy terms. This may vary if the treatment is conducted under a Preferred Provider Network (PPN) package."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor during hospitalization for organ harvesting are covered under the policy, provided the donation complies with the Transplantation of Human Organs Act, 1994, and its amendments, and the claim for the insured undergoing the transplant is admitted. However, pre-hospitalization, post-hospitalization expenses, and other exclusions apply."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of 5% on the base premium is offered on policy renewal, provided no claims were reported during the expiring policy term. For policies with terms exceeding one year, the aggregate NCD cannot exceed 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups in health insurance policies often offer benefits such as early detection of diseases, cost savings on premiums through No Claim Discounts, and periodic reimbursements for health screenings, enhancing overall health management."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "A 'Hospital' is defined as an institution established for in-patient and day-care treatment of diseases/injuries, registered with local authorities under the Clinical Establishments (Registration and Regulation) Act, 2010 or equivalent legislation."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "AYUSH treatments, including Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy, are covered under insurance when provided at AYUSH hospitals or recognized facilities with qualified AYUSH practitioners, dedicated therapy sections, and compliance with specified criteria."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limits on room rent are up to 1% of the sum insured (SI) or actual charges, whichever is lower, and for ICU charges, it is up to 2% of the SI or actual charges, whichever is lower."
+        }
+    ],
+    "response_26": [
+        {
+            "question_no": 1,
+            "question": "What is the grace period for premium payment under the National Parivar Mediclaim Plus Policy?",
+            "answer": "The context does not provide specific details about the grace period for premium payment under the National Parivar Mediclaim Plus Policy."
+        },
+        {
+            "question_no": 2,
+            "question": "What is the waiting period for pre-existing diseases (PED) to be covered?",
+            "answer": "The waiting period for coverage of pre-existing diseases (PED) is typically 36 months of continuous coverage after the policy inception, provided the PED was declared at the time of application and accepted by the insurer."
+        },
+        {
+            "question_no": 3,
+            "question": "Does this policy cover maternity expenses, and what are the conditions?",
+            "answer": "Yes, the policy covers maternity expenses, including childbirth (normal and caesarean), lawful medical termination of pregnancy, and pre-natal/post-natal hospitalization. However, coverage is subject to conditions like a 24-month waiting period, age limits (18-45 years), and limits on the number of claims (up to two deliveries)."
+        },
+        {
+            "question_no": 4,
+            "question": "What is the waiting period for cataract surgery?",
+            "answer": "The waiting period for cataract surgery depends on the insurance policy's terms, but it can vary and might be waived if treatment is done through a Preferred Provider Network (PPN). Always check the specific policy conditions for precise details."
+        },
+        {
+            "question_no": 5,
+            "question": "Are the medical expenses for an organ donor covered under this policy?",
+            "answer": "Medical expenses for an organ donor are covered under the policy if incurred during the donor's hospitalization for organ harvesting, provided the transplant complies with the Transplantation of Human Organs Act 1994 and its amendments. However, pre- and post-hospitalization expenses, costs for acquiring the donor's organ, experimental procedures, or post-harvesting complications are excluded."
+        },
+        {
+            "question_no": 6,
+            "question": "What is the No Claim Discount (NCD) offered in this policy?",
+            "answer": "A No Claim Discount (NCD) of flat 5% on the base premium is offered on renewal if no claims are reported in the expiring policy. For policies exceeding one year, the NCD amount is aggregated per claim-free year but cannot exceed 5% of the total base premium."
+        },
+        {
+            "question_no": 7,
+            "question": "Is there a benefit for preventive health check-ups?",
+            "answer": "Preventive health check-ups, including pre-policy checkups, can provide benefits like early detection of illnesses and fulfilling mandatory requirements for certain critical illness covers. Additionally, many health insurance policies offer incentives such as discounts or reimbursement for health check-up expenses."
+        },
+        {
+            "question_no": 8,
+            "question": "How does the policy define a 'Hospital'?",
+            "answer": "The policy defines a 'Hospital' as an institution equipped and supervised for providing medical care and treatment to ill or injured individuals, including facilities like inpatient care, a dedicated Intensive Care Unit (ICU), and associated room and boarding expenses."
+        },
+        {
+            "question_no": 9,
+            "question": "What is the extent of coverage for AYUSH treatments?",
+            "answer": "Insurance coverage for AYUSH treatments, including Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy, is typically applicable for hospitalization or surgical/para-surgical treatments conducted in AYUSH hospitals recognized by the government or attached to AYUSH colleges. These facilities must meet specific criteria, such as having at least 5 in-patient beds, round-the-clock supervision by qualified AYUSH practitioners, and maintaining accessible daily patient records."
+        },
+        {
+            "question_no": 10,
+            "question": "Are there any sub-limits on room rent and ICU charges for Plan A?",
+            "answer": "For Plan A, the sub-limits on room rent and ICU charges are as follows: Room rent is up to 1% of the Sum Insured (SI) or actual, whichever is lower, and ICU charges are up to 2% of the SI or actual, whichever is lower."
+        }
     ]
 }

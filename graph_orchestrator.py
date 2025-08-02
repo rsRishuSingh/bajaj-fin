@@ -70,7 +70,7 @@ class AgentState(TypedDict):
 
 
 @tool
-def hybrid_search(query: str, collection_name: str, top_k: int = 3) -> List[str]:
+def hybrid_search(query: str, collection_name: str, top_k: int = 5) -> List[str]:
     """
     Perform hybrid retrieval combining vector search over Qdrant.
 
@@ -91,6 +91,7 @@ def hybrid_search(query: str, collection_name: str, top_k: int = 3) -> List[str]
         search_result = qdrant_client.query_points(
             collection_name=collection_name,
             query=query_vector,
+            score_threshold=0.10,
             limit=top_k
         )
         
@@ -120,9 +121,11 @@ def check_query_agent(state: AgentState) -> AgentState:
     system = SystemMessage(
         content=(
             "You are the RAG orchestrator which looks at query given by user after uploading the document of legal, insurance, contract, policy domains. Analyze the query and perform one of following task:"
-            f"\n 1) Call hybrid_search Tool for document retrieval with collection_name: {state['collection_name']}"
+            f"\n 1) Call hybrid_search Tool for document retrieval with collection_name: {state['collection_name']}."
+            "\ndefault top 5 chunks are retrieved from hybrid_search in first cycle but if query has been expanded by expand_query retrieve top 10 chunks"
             "\n 2) Return 'Ambiguous query' or 'Insufficient query' as response in format \n<response here> only and only when query is not creating any meaning."
             "\nDo not change query"
+            f"\nRECENT CONVERSATION:\n{get_context(state,20)}"
         )
     )
     query = state["query"]
@@ -161,6 +164,7 @@ def expand_query(state: AgentState) -> AgentState:
     system = SystemMessage(
         content=(
             "You are a query expansion assistant in legal, insurance, contract, policy domains. Produce exactly one optimized search query."
+
         )
     )
     human = HumanMessage(
@@ -184,10 +188,10 @@ def answer_query(state: AgentState) -> AgentState:
     prompt = SystemMessage(
         content=(
             "You are a RAG assistant in legal, insurance, contract, policy domains which buildis the final response to answer user query." 
-            "\nGive to the point answer from retrieved context from hybrid_search tool only"
+            "\nGive to the detailed answer from retrieved context from hybrid_search tool only"
+            "\nAnswer the question in 1 or 2 lines or 3 lines at max"
             "\nDo not drift away from main query "
-            "\nDo not hallucinate and acknowledge any missing data."
-            "\nIf not relevent context retrieved Tell the same to user"
+            "\nDo not hallucinate and acknowledge any missing data or no relevent context."
             f"\nContext: {get_context(state,20)}"
             "\nResponse format must be like:\n<response here>"
         )
@@ -241,7 +245,7 @@ graph.add_conditional_edges(
         'answer_query': 'answer_query'
     }
 )
-graph.add_edge("expand_query","hybrid_search_tool")
+graph.add_edge("expand_query","check_query_agent")
 graph.add_edge("answer_query",END)
 
 # Compile graph into an app
