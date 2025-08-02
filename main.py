@@ -1,10 +1,13 @@
+import os
 import time
 from download_pdf import download_pdf
 from chunking import process_and_chunk_pdf
-from qdrant_connect import create_collection, insert_data_in_batches
+# from qdrant_connect import create_collection, insert_data_in_batches, delete_collection
+from async_qdrant import create_collection, insert_data_parallel, delete_collection
 from graph_orchestrator import graph_orchestrator_run
 from question_list import list_of_questions
 from utility import save_responses
+import asyncio
 
 def main() -> None:
     """Executes the full RAG pipeline from a JSON input file and returns the results."""
@@ -13,7 +16,9 @@ def main() -> None:
     start = time.time()
 
     path = '''https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D'''
-    
+
+    collection_name = "my_document_store_47"
+
     is_downloaded = download_pdf(path)
     print("PDF status: ", is_downloaded)
     print("PDF Downloaded in: ", time.time()-start)
@@ -26,16 +31,14 @@ def main() -> None:
     print("Chunks created in: ", time.time()-start)
 
 
-    collection_name = "my_document_store_45"
-
     start = time.time()
-    is_created = create_collection(collection_name)
+    is_created = asyncio.run(create_collection(collection_name))
     print("Collection status: ", is_created)
     print("Collection created in: ", time.time()-start)
 
 
     start = time.time()
-    is_inserted = insert_data_in_batches(all_chunks,collection_name)
+    is_inserted = asyncio.run(insert_data_parallel(all_chunks,collection_name))
     print("Insert status: ", is_inserted)
     print("Chunks insert in: ", time.time()-start)
 
@@ -46,6 +49,12 @@ def main() -> None:
     print("Query answered in: ", time.time()-start)
 
     print("Total time taken: ",time.time()-begin)
+
+    os.remove('temp.pdf')
+    print("Deleted PDF")
+
+    is_deleted = asyncio.run(delete_collection(collection_name))
+    print("Connection deleted status: ", is_deleted)
 
     
 main()

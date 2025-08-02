@@ -36,6 +36,22 @@ def create_collection(collection_name):
     except Exception as e:
         print(f"Error creating or verifying collection: {e}")
         return False
+    
+def delete_collection(collection_name):
+    """Ensures the Qdrant collection is deleted."""
+    vector_size = embedder.get_sentence_embedding_dimension()
+    try:
+        if qdrant_client.collection_exists(collection_name=collection_name):
+            print(f"Deleting collection '{collection_name}'...")
+            qdrant_client.delete_collection(collection_name=collection_name)
+            print("Collection deleted successfully.")
+        else:
+            print(f"No collection '{collection_name}' exists.")
+        return True
+    except Exception as e:
+        print(f"Error deleting or verifying collection: {e}")
+        return False
+
 
 def insert_data_in_batches(docs, collection_name)->bool:
     """
