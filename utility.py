@@ -9,20 +9,83 @@ from datetime import datetime, timezone, timedelta
 from langchain_core.messages import HumanMessage, BaseMessage
 
 load_dotenv()
-MODEL_NAME = os.getenv("MODEL_NAME", "qwen/qwen3-32b")
 
 
-def save_responses(responses: Dict[str, str], filename: str = "responses.json") -> None:
+def save_responses_append(
+    responses: List[Dict[str, Union[int, str]]],
+    filename: str = "responses.json"
+) -> None:
     """
-    Save the given query→answer mapping as a pretty-printed JSON file.
+    Appends a new set of responses to a JSON file.
+
+    This function reads the existing JSON file, adds the new list of responses
+    as a new entry in the main dictionary, and saves it back.
 
     Args:
-        responses: Dict where keys are the original queries and values are the answers.
-        filename:  Path (and name) of the file to write.
+        responses: A list of dictionaries representing the new response set to add.
+        filename:  Path to the JSON file.
     """
+    all_responses = {}
+    # 1. Load existing data if the file exists and is valid
+    if os.path.exists(filename):
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+                # Ensure we are working with a dictionary
+                if isinstance(existing_data, dict):
+                    all_responses = existing_data
+        except (json.JSONDecodeError, FileNotFoundError):
+            # If file is corrupt or unreadable, we'll start fresh
+            pass
+
+    # 2. Determine the key for the new response set
+    new_key = f"response_{len(all_responses) + 1}"
+
+    # 3. Add the new response list under the new key
+    all_responses[new_key] = responses
+
+    # 4. Write the entire updated dictionary back to the file
     with open(filename, "w", encoding="utf-8") as f:
-        json.dump(responses, f, ensure_ascii=False, indent=2)
-    print(f"Saved {len(responses)} responses to {filename}")
+        json.dump(all_responses, f, ensure_ascii=False, indent=4)
+
+    print(f"✅ Appended new entry '{new_key}' to {filename}")
+
+
+
+def load_responses(filename: str = "responses.json") -> Dict[str, List[Dict[str, Union[int, str]]]]:
+    """
+    Loads the dictionary of all response sets from the JSON file.
+
+    This function returns the data in the exact format it is saved, which is a
+    dictionary where each key maps to a specific response set.
+
+    Args:
+        filename: Path (and name) of the file to read.
+
+    Returns:
+        A dictionary containing all saved response sets.
+        Returns an empty dictionary if the file is not found or is invalid.
+    """
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            # Load the entire dictionary from the file
+            all_responses = json.load(f)
+
+            # Validate that the loaded data is a dictionary
+            if not isinstance(all_responses, dict):
+                print(f"❌ Expected a dictionary in {filename}, but found {type(all_responses).__name__}. Returning empty.")
+                return {}
+
+        print(f"✅ Loaded {len(all_responses)} response sets from {filename}")
+        return all_responses
+
+    except FileNotFoundError:
+        print(f"⚠️ File not found: {filename}. Returning an empty dictionary.")
+        return {}
+    except json.JSONDecodeError:
+        print(f"❌ Error decoding JSON from {filename}. File might be corrupt. Returning an empty dictionary.")
+        return {}
+    
 
 def _unwrap(item: Any) -> Any:
     """
@@ -144,43 +207,3 @@ def get_context(state, num_messages: int = 10) -> str:
 
     return context
 
-
-def compress_context(state:Any) -> str:
-    """
-    Compresses the conversation context by retrieving the latest messages,
-    splitting them into manageable chunks, and aggregating LLM-generated summaries.
-
-    Parameters:
-        state: AgentState or similar object containing conversation history.
-
-    Returns:
-        A single string representing the compressed context,
-        built by concatenating LLM responses for each chunk.
-    """
-    # Retrieve the most recent 10 messages from state
-    if len(state) == 0:
-        return ""
-    context = get_context(state, 10)
-
-    # Split the context into overlapping chunks of ~500 tokens with 100 token overlap
-    chunks = recursive_split(context, 2000, 200)
-
-    llm = ChatGroq(model=MODEL_NAME)
-    compressed = ""
-
-    # Prompt to guide the LLM on how to compress each chunk
-    final_prompt = (
-        "Please produce a concise and clear summary of the following conversation excerpt without any redudancy."
-        "focusing on key insights, company details, context and tools. "
-        "Maintain coherence across chunks when concatenated."
-        "Compress all context to maximum of 200 chunks size"
-    )
-
-    for chunk in chunks:
-        msg = HumanMessage(content=chunk)
-        # Invoke LLM with prompt + chunk
-        response = llm.invoke([HumanMessage(content=final_prompt), msg])
-        final_response = remove_think(response.content)
-        compressed += final_response + "\n"
-
-    return compressed.strip()

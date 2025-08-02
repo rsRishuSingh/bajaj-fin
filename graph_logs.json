@@ -1,198 +1,166 @@
 [
   {
-    "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:32:58.200186+05:30"
-  },
-  {
-    "expand_query": "< Optimised Query: Extent of insurance coverage for AYUSH treatments in health policies >",
-    "timestamp": "2025-08-02T15:32:58.233453+05:30"
+    "check_content": "answer_query",
+    "timestamp": "2025-08-02T16:28:16.824976+05:30"
   },
   {
     "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:32:58.282137+05:30"
-  },
-  {
-    "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:32:58.345414+05:30"
-  },
-  {
-    "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:32:58.465454+05:30"
-  },
-  {
-    "expand_query": "<Optimised Query: Definition and scope of 'Hospital' in insurance policy terms, including exclusions and specific requirements for eligibility>",
-    "timestamp": "2025-08-02T15:32:58.877035+05:30"
-  },
-  {
-    "expand_query": "<Optimised Query: \"Coverage of medical expenses for organ donors under health insurance policies, including stipulations or clauses in organ donation-related insurance contracts\">",
-    "timestamp": "2025-08-02T15:32:58.894323+05:30"
-  },
-  {
-    "expand_query": "<Optimised Query: \"health insurance pre-existing condition waiting period duration coverage terms policies\">",
-    "timestamp": "2025-08-02T15:32:58.932252+05:30"
-  },
-  {
-    "expand_query": "< Optimised Query: \"insurance policy waiting period for cataract surgery coverage rules 2023 details\" >",
-    "timestamp": "2025-08-02T15:32:59.387197+05:30"
-  },
-  {
-    "hybrid_search_success": [],
-    "timestamp": "2025-08-02T15:33:03.478028+05:30"
-  },
-  {
-    "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:33:05.872228+05:30"
-  },
-  {
-    "expand_query": "<Optimised Query: What are the health insurance policy provisions, including coverage, terms, conditions, and exclusions, specifically related to maternity expenses?>",
-    "timestamp": "2025-08-02T15:33:06.624789+05:30"
-  },
-  {
-    "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:33:06.661336+05:30"
-  },
-  {
-    "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:33:06.691629+05:30"
+    "timestamp": "2025-08-02T16:28:16.870356+05:30"
   },
   {
     "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:06.725502+05:30"
-  },
-  {
-    "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:06.787515+05:30"
-  },
-  {
-    "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:06.987489+05:30"
-  },
-  {
-    "expand_query": "<Optimised Query: Coverage limits, exclusions, and conditions for AYUSH (Ayurveda, Yoga, Unani, Siddha, and Homeopathy) treatments in health insurance policies in 2023>",
-    "timestamp": "2025-08-02T15:33:07.058603+05:30"
+    "timestamp": "2025-08-02T16:28:16.912377+05:30"
   },
   {
     "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:33:07.124976+05:30"
-  },
-  {
-    "expand_query": "< Optimised Query: \"specific sub-limits for room rent and ICU charges under Plan A insurance policy coverage terms and conditions\" >",
-    "timestamp": "2025-08-02T15:33:07.308205+05:30"
-  },
-  {
-    "expand_query": "<Optimised Query: Legal definition and scope of 'Hospital' in insurance policy terms, including common exclusions, criteria for eligibility, minimum requirements, and relevant case law or regulatory standards>",
-    "timestamp": "2025-08-02T15:33:07.348608+05:30"
-  },
-  {
-    "answer_query": "No relevant context found regarding the name and address of insurance companies providing current policy coverage details. Please provide more specific details or context for further assistance.",
-    "timestamp": "2025-08-02T15:33:07.450982+05:30"
-  },
-  {
-    "expand_query": "<Optimised Query: \"Grace period for premium payment terms in National Parivar Mediclaim Plus Policy, policy conditions, renewal guidelines\">",
-    "timestamp": "2025-08-02T15:33:07.490454+05:30"
-  },
-  {
-    "expand_query": "<Optimised Query: \"Legal and contractual provisions regarding coverage of medical expenses for organ donors under health insurance policies, including terms in organ donation-specific clauses or agreements\">",
-    "timestamp": "2025-08-02T15:33:07.518805+05:30"
-  },
-  {
-    "answer_query": "No relevant context found regarding the waiting period for pre-existing diseases coverage in health insurance policies. Please refer to your specific insurance policy document or consult with your insurance provider for accurate and detailed information on this matter.",
-    "timestamp": "2025-08-02T15:33:07.596149+05:30"
-  },
-  {
-    "answer_query": "No relevant context found regarding the waiting period for cataract surgery under insurance policies. You may need to refer to specific insurance policy documents or consult your insurance provider for accurate details.",
-    "timestamp": "2025-08-02T15:33:07.716322+05:30"
+    "timestamp": "2025-08-02T16:28:16.954975+05:30"
   },
   {
     "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:07.730107+05:30"
+    "timestamp": "2025-08-02T16:28:17.319845+05:30"
   },
   {
-    "answer_query": "No relevant context about the required documents for filing an insurance claim has been retrieved. Please provide specific details about the type of insurance claim or policy for further assistance.",
-    "timestamp": "2025-08-02T15:33:07.854750+05:30"
+    "expand_query": "<Optimised Query: \"definition of hospital in insurance policy terms OR health policy terms OR coverage policy terms\">",
+    "timestamp": "2025-08-02T16:28:17.416391+05:30"
   },
   {
-    "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:07.935656+05:30"
+    "expand_query": "<Optimised Query: Benefits of preventive health check-ups under health insurance policies, eligibility criteria, reimbursement limits, exclusions, and tax implications>",
+    "timestamp": "2025-08-02T16:28:17.590297+05:30"
   },
   {
-    "expand_query": "<Optimised Query: Comprehensive analysis of health insurance coverage for maternity expenses, including policy provisions, terms, conditions, exclusions, waiting periods, and any associated riders or add-ons.>",
-    "timestamp": "2025-08-02T15:33:07.968409+05:30"
+    "expand_query": "<Optimised Query: waiting period for cataract surgery in health insurance policies India>",
+    "timestamp": "2025-08-02T16:28:17.613903+05:30"
   },
   {
     "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:33:08.211093+05:30"
+    "timestamp": "2025-08-02T16:28:17.885915+05:30"
   },
   {
-    "answer_query": "No relevant context found regarding the specific sub-limits for room rent and ICU charges under Plan A insurance policy. Please provide more details or refer to the insurance policy document for accurate information.",
-    "timestamp": "2025-08-02T15:33:08.393664+05:30"
+    "hybrid_search_success": [
+      "authorities, wherever applicable, and is under the supervision of a qualified registered AYUSH Medical Practitioner and must comply with all the following criterion: i. Having at least 5 in-patient beds; ii. Having qualified AYUSH Medical Practitioner in charge round the clock; iii. Having dedicated AYUSH therapy sections as required; iv. Maintaining daily records of the patients and making them accessible to the insurance company’s authorized representative 2.8 Break in policy means the period of gap that occurs at the end of the existing Policy Period due date, when the premium due for renewal on a given policy or instalment premium due is not paid on or before the premium renewal date or grace period. National Insurance Co. Ltd. National Parivar Mediclaim Plus Policy Premises No. 18-0374, Plot no. CBD-81, Page 1 of 25 UIN: NICHLIP25039V032425 New Town, Kolkata - 700156",
+      "round the clock; ii. Having dedicated AYUSH therapy sections as required and/or has equipped operation theatre where surgical procedures are to be carried out; iii. Maintaining daily records of the patients and making them accessible to the insurance company’s authorized representative. 2.6 AYUSH Treatment refers to the medical and / or Hospitalisation treatments given Ayurveda, Yoga and Naturopathy, Unani, Siddha and Homeopathy systems. 2.7 AYUSH Hospital is a healthcare facility wherein medical/surgical/para-surgical treatment procedures and interventions are carried out by AYUSH Medical Practitioner(s) comprising of any of the following: a. Central or State Government AYUSH Hospital or b. Teaching hospital attached to AYUSH College recognized by the Central Government/ Central Council of Indian Medicine/ Central Council for Homeopathy; or c. AYUSH Hospital, standalone or co-located with in-patient healthcare facility of any recognized system of medicine, registered with the local authorities, wherever applicable, and is under the supervision of a qualified registered AYUSH Medical Practitioner and must comply with all the following criterion: i. Having at least 5 in-patient",
+      "by Human Immunodeficiency Virus (HIV), which attacks and weakens the body’s immune system making the HIV- positive person susceptible to life threatening conditions or other conditions, as may be specified from time to time. 2.4 Any One Illness means continuous period of illness and it includes relapse within forty five days from the date of last consultation with the hospital where treatment has been taken. 2.5 AYUSH Day Care Centre means and includes Community Health Centre (CHC), Primary Health Centre (PHC), Dispensary, Clinic, Polyclinic or any such health centre which is registered with the local authorities, wherever applicable and having facilities for carrying out treatment procedures and medical or surgical / para-surgical interventions or both under the supervision of registered AYUSH Medical Practitioner(s) on day care basis without in-patient services and must comply with all the following criterion: i. Having qualified registered AYUSH Medical Practitioner in charge round the clock; ii. Having dedicated AYUSH therapy sections as required and/or has equipped operation theatre where surgical procedures are to be carried out; iii. Maintaining daily records of the"
+    ],
+    "timestamp": "2025-08-02T16:28:17.923129+05:30"
   },
   {
-    "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:08.453584+05:30"
-  },
-  {
-    "expand_query": "Optimised Query: What are the eligibility requirements, conditions, coverage period, discount rates, claim history considerations, exclusions, and renewal procedures associated with the No Claim Discount (NCD) in various types of insurance policies?",
-    "timestamp": "2025-08-02T15:33:08.804345+05:30"
-  },
-  {
-    "expand_query": "< Optimised Query: \"benefits of preventive health check-ups in insurance policies and healthcare contracts\" >",
-    "timestamp": "2025-08-02T15:33:08.893379+05:30"
-  },
-  {
-    "answer_query": "No relevant context found regarding health insurance coverage for maternity expenses, including policy provisions, terms, conditions, exclusions, waiting periods, or associated riders and add-ons. Please provide specific details or consult the policy document for accurate information.",
-    "timestamp": "2025-08-02T15:33:09.215331+05:30"
+    "hybrid_search_success": [
+      "The Insured Person will have the option to migrate the Policy to an alternative health insurance product offered by the Company by applying for Migration of the policy at least 30 days before the policy renewal date as per extant Guidelines related to Migration. If such person is presently covered and has been continuously covered without any lapses under this Policy offered by the Company, i. The Insured Person will get all the accrued continuity benefits for credits gained to the extent of the specific waiting periods, waiting period for pre-existing diseases and Moratorium period of the Insured Person. National Insurance Co. Ltd. National Parivar Mediclaim Plus Policy Premises No. 18-0374, Plot no. CBD-81, Page 16 of 25 UIN: NICHLIP25039V032425 New Town, Kolkata - 700156",
+      "authorities, wherever applicable, and is under the supervision of a qualified registered AYUSH Medical Practitioner and must comply with all the following criterion: i. Having at least 5 in-patient beds; ii. Having qualified AYUSH Medical Practitioner in charge round the clock; iii. Having dedicated AYUSH therapy sections as required; iv. Maintaining daily records of the patients and making them accessible to the insurance company’s authorized representative 2.8 Break in policy means the period of gap that occurs at the end of the existing Policy Period due date, when the premium due for renewal on a given policy or instalment premium due is not paid on or before the premium renewal date or grace period. National Insurance Co. Ltd. National Parivar Mediclaim Plus Policy Premises No. 18-0374, Plot no. CBD-81, Page 1 of 25 UIN: NICHLIP25039V032425 New Town, Kolkata - 700156",
+      "cover should be identical, as mentioned in the schedule. Tax Rebate The insured person can avail tax benefits for the premium paid, under Section 80D of Income Tax Act 1961. Renewal The Outpatient Treatment cover can be renewed annually throughout the lifetime of the insured person. 7.2.1 Exclusions The Company shall not make any payment under the cover in respect of i. Treatment other than Allopathy/ Modern medicine, AYUSH ii. * Cosmetic dental treatment to straighten lightens, reshape and repair teeth. * Cosmetic treatments include veneers, crowns, bridges, tooth-coloured fillings, implants and tooth whitening). 7.2.2 Condition Claim Amount i. Any amount payable shall not affect the sum insured applicable to Section 3.1 and entitlement to No Claim Discount. ii. Any amount payable shall not be subject to co-payment. National Insurance Co. Ltd. National Parivar Mediclaim Plus Policy Premises No. 18-0374, Plot no. CBD-81, Page 18 of 25 UIN: NICHLIP25039V032425 New Town, Kolkata - 700156"
+    ],
+    "timestamp": "2025-08-02T16:28:17.994641+05:30"
   },
   {
     "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:09.256159+05:30"
+    "timestamp": "2025-08-02T16:28:18.043165+05:30"
+  },
+  {
+    "check_content": "answer_query",
+    "timestamp": "2025-08-02T16:28:18.069041+05:30"
+  },
+  {
+    "answer_query": "For Plan A, the sub-limits on room rent and ICU charges per day are as follows:\n\n- Room rent: Up to 1% of the Sum Insured (SI) or the actual expense, whichever is lower.\n- ICU charges: Up to 2% of the Sum Insured (SI) or the actual expense, whichever is lower.\n\nHowever, these limits do not apply if the treatment is undergone for a listed procedure in a Preferred Provider Network (PPN) as a package.",
+    "timestamp": "2025-08-02T16:28:18.371425+05:30"
+  },
+  {
+    "answer_query": "The waiting period for pre-existing diseases (PED) to be covered under a health insurance policy is typically 36 months of continuous coverage from the inception of the first policy. However, this may vary depending on the policy terms and specific insurance provider. Additionally, if the insured has maintained continuous coverage without any break as per IRDAI portability norms, the waiting period may be reduced based on prior coverage.",
+    "timestamp": "2025-08-02T16:28:18.397308+05:30"
   },
   {
     "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:33:09.391104+05:30"
+    "timestamp": "2025-08-02T16:28:18.457574+05:30"
   },
   {
-    "expand_query": "<Optimised Query: Comprehensive analysis of health insurance policies in 2023 covering AYUSH treatments, including Ayurveda, Yoga, Unani, Siddha, and Homeopathy, focusing on coverage limits, exclusions, eligibility criteria, and policy conditions.>",
-    "timestamp": "2025-08-02T15:33:09.724361+05:30"
+    "answer_query": "Yes, this policy covers maternity expenses, subject to the following conditions:\n\n1. **Eligibility**: The female insured person must have been continuously covered under the policy for at least 24 months before availing of this benefit.\n   \n2. **Age Limit**: Coverage is available for insured women aged 18 to 45 years.\n\n3. **Coverage Details**:\n   - Medical treatment expenses related to childbirth, including complicated deliveries and caesarean sections during hospitalization.\n   - Expenses for lawful medical termination of pregnancy within the policy period.\n   - Ectopic pregnancies are covered under 'In-patient treatment' if established by medical reports.\n\n4. **New Born Baby**: Automatically covered from birth under the mother's sum insured for up to",
+    "timestamp": "2025-08-02T16:28:18.536306+05:30"
   },
   {
-    "answer_query": "No relevant context was retrieved to determine whether medical expenses for an organ donor are covered under health insurance policies or specific clauses in organ donation-related contracts. Consider reviewing the specific policy terms or consulting directly with the insurance provider for accurate information.",
-    "timestamp": "2025-08-02T15:33:09.928797+05:30"
+    "expand_query": "<Optimised Query: \"meaning of hospitalisation in health insurance policy OR inpatient care definition in coverage policy OR ICU expenses coverage criteria in insurance terms\">",
+    "timestamp": "2025-08-02T16:28:18.616664+05:30"
   },
   {
-    "expand_query": "<Optimised Query: \"advantages of regular preventive health check-ups in relation to insurance policy coverage and healthcare contractual obligations\">",
-    "timestamp": "2025-08-02T15:33:10.027945+05:30"
-  },
-  {
-    "answer_query": "No relevant context found to provide specific details about the No Claim Discount (NCD) in the insurance policy. Please provide the name of the insurance company or policy details for a more accurate response.",
-    "timestamp": "2025-08-02T15:33:10.110733+05:30"
+    "answer_query": "The documents required to apply for a claim typically include:\n\n1. **Completed claim form**  \n2. **Bills, payment receipts, medical history of the patient recorded, discharge certificate/summary from the hospital**  \n3. **Cash-memo from the hospital/chemist supported by a proper prescription**  \n4. **Payment receipts and investigation test reports supported by a prescription from the attending medical practitioner**  \n5. **Attending medical practitioner's certificate regarding diagnosis along with the date of diagnosis and bill receipts**  \n6. **Certificate from the surgeon stating diagnosis, nature of the operation, and related bills/receipts**  \n7. **For domiciliary hospitalization claims**: Medical certificate stating circumstances requiring domiciliary hospitalization and fitness certificate from the treating",
+    "timestamp": "2025-08-02T16:28:18.639723+05:30"
   },
   {
     "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:10.645815+05:30"
+    "timestamp": "2025-08-02T16:28:19.087338+05:30"
   },
   {
-    "answer_query": "No relevant context was retrieved to define 'Hospital' in insurance policy terms, including exclusions, specific requirements for eligibility, or related legal and regulatory standards. You may need to refer directly to the specific insurance policy or consult an expert in insurance law for accurate details.",
-    "timestamp": "2025-08-02T15:33:10.951879+05:30"
+    "expand_query": "< Optimised Query: \"National Parivar Mediclaim Plus Policy grace period for premium payment renewal terms National Insurance Co.\" >",
+    "timestamp": "2025-08-02T16:28:19.113813+05:30"
+  },
+  {
+    "expand_query": "<Optimised Query: extent of insurance coverage for AYUSH treatments under Ayurveda, Yoga, Naturopathy, Unani, Siddha, Homeopathy, qualification criteria for AYUSH hospitals and day care centers>",
+    "timestamp": "2025-08-02T16:28:19.156258+05:30"
+  },
+  {
+    "answer_query": "The waiting period for cataract surgery in health insurance policies in India varies depending on the policy. Typically, pre-existing conditions are covered after 36 months of continuous coverage. However, the specific waiting period for cataract surgery itself is not clearly mentioned in the retrieved context. It is advisable to check the individual terms and conditions of your health insurance policy or contact your insurer for exact details.",
+    "timestamp": "2025-08-02T16:28:19.240447+05:30"
+  },
+  {
+    "check_content": "answer_query",
+    "timestamp": "2025-08-02T16:28:19.600104+05:30"
+  },
+  {
+    "answer_query": "Preventive health check-ups under health insurance policies often come with specific benefits, eligibility criteria, reimbursement limits, exclusions, and tax implications:\n\n1. **Benefits**: \n   - Policies may allow reimbursement for health check-up expenses after a specified duration (e.g., every 2 years) if the policy has been continuously renewed without a break.\n   - Certain policies provide limits for reimbursement, such as INR 5,000, INR 7,500, or INR 10,000, based on the sum insured or policy type.\n\n2. **Eligibility Criteria**:\n   - The entry age for availing preventive health check-ups generally falls between 18 and 65 years.\n   - Specific eligibility criteria may also involve being covered under the policy",
+    "timestamp": "2025-08-02T16:28:19.888828+05:30"
+  },
+  {
+    "answer_query": "The retrieved context does not provide a specific definition of 'Hospital' in the insurance or health policy terms. It mentions related terms like 'Hospitalisation,' 'In-patient Care,' and 'ICU Charges,' but no direct definition of 'Hospital' is included. Let me know if you'd like assistance with any of these related concepts.",
+    "timestamp": "2025-08-02T16:28:20.205015+05:30"
+  },
+  {
+    "hybrid_search_success": [
+      "Organ Donor's Hospitalisation Expenses\tNone\nThe Company shall indemnify the Medical Expenses incurred in respect of an organ donor’s Hospitalisation during the Policy\tNone\nPeriod for harvesting of the organ donated to an Insured Person, provided that:\tNone\nNone\t. The organ donation confirms to the Transplantation of Human Organs Act 1994 (and its amendments from time to time)\nNone\t. The organ is used for an Insured Person and the Insured Person has been medically advised to undergo an organ transplant\nNone\t. The Medical Expenses shall be incurred in respect of the organ donor as an in-patient in a Hospital.\nNone\t. Claim has been admitted under In-patient Treatment Section in respect of the Insured Person undergoing the organ\nNone\ttransplant.\n\tNone\nExclusions\tNone\nThe Company shall not be liable to make payment for any claim under this Cover which arises for or in connection with any of the\tNone\nfollowing:\tNone\nNone\t. Pre-hospitalization Medical Expenses or Post- Hospitalization Medical Expenses of the organ donor.\nNone\t. Costs directly or indirectly associated with the acquisition of the donor’s organ.\nNone\t. Medical Expenses where the organ transplant is experimental or investigational.\nNone\t. Any medical treatment or complication in respect of the donor, consequent to harvesting.\nNone\t. Any expenses related to organ transportation or preservation.",
+      "(and its amendments from time to time) ii. The organ is used for an Insured Person and the Insured Person has been medically advised to undergo an organ transplant iii. The Medical Expenses shall be incurred in respect of the organ donor as an in-patient in a Hospital. iv. Claim has been admitted under In-patient Treatment Section in respect of the Insured Person undergoing the organ transplant. Exclusions The Company shall not be liable to make payment for any claim under this Cover which arises for or in connection with any of the following: i. Pre-hospitalization Medical Expenses or Post- Hospitalization Medical Expenses of the organ donor. ii. Costs directly or indirectly associated with the acquisition of the donor’s organ. iii. Medical Expenses where the organ transplant is experimental or investigational. iv. Any medical treatment or complication in respect of the donor, consequent to harvesting. v. Any expenses related to organ transportation or preservation. 3.1.8 Hospital Cash The Company shall pay the insured a daily hospital cash allowance up to the limit as shown in the Table of Benefits for a maximum of five days, provided: i. the hospitalisation exceeds three days.",
+      "3.1.5 Day Care Procedure The Company shall indemnify the Medical Expenses (including Pre and Post Hospitalisation Expenses) for Day Care Treatments requiring Hospitalization as an In-Patient for less than 24 hours undergone by the Insured Person in a Hospital/ Day Care Centre, but not in the Outpatient department of a Hospital. 3.1.6 AYUSH Treatment The Company shall indemnify Medical Expenses incurred for Inpatient Care treatment under Ayurveda, Yoga and Naturopathy, Unani, Siddha and Homeopathy systems of medicines during each Policy Period up to the limit of Sum Insured as specified in the Policy Schedule in any AYUSH Hospital. 3.1.7 Organ Donor’s Medical Expenses Organ Donor's Hospitalisation Expenses The Company shall indemnify the Medical Expenses incurred in respect of an organ donor’s Hospitalisation during the Policy Period for harvesting of the organ donated to an Insured Person, provided that: i. The organ donation confirms to the Transplantation of Human Organs Act 1994 (and its amendments from time to time) ii. The organ is used for an Insured Person and the Insured Person has been medically advised to undergo an organ transplant iii. The Medical Expenses shall be"
+    ],
+    "timestamp": "2025-08-02T16:28:20.526660+05:30"
+  },
+  {
+    "expand_query": "<Optimised Query: \"National Parivar Mediclaim Plus Policy migration guidelines, grace period for renewal, coverage continuity benefits, and tax rebate terms National Insurance Co.\">",
+    "timestamp": "2025-08-02T16:28:20.668594+05:30"
+  },
+  {
+    "check_content": "answer_query",
+    "timestamp": "2025-08-02T16:28:20.962268+05:30"
   },
   {
     "check_content": "expand_query",
-    "timestamp": "2025-08-02T15:33:11.027564+05:30"
+    "timestamp": "2025-08-02T16:28:21.121515+05:30"
   },
   {
-    "answer_query": "No relevant context was retrieved to provide information on the extent of insurance coverage for AYUSH treatments, including coverage limits, exclusions, eligibility criteria, and policy conditions in 2023. Please consult your specific insurance policy documents or contact your insurance provider for precise details.",
-    "timestamp": "2025-08-02T15:33:11.556696+05:30"
+    "hybrid_search_success": [
+      "year, if the Insured and/or Insured Person (s) has to subsequently incur any expenses on hospitalisation due to any other disease/ injury, the Company shall reinstate the sum insured as mentioned in the schedule. Reinstatement shall be allowed only once during the policy year and the maximum amount payable under a single claim shall not exceed the sum insured as mentioned in the schedule. 3.2 GOOD HEALTH INCENTIVES 3.2.1 No Claim Discount (NCD) On renewal of policies with a term of one year, a NCD of flat 5% shall be allowed on the * base premium, provided claims are not reported in the expiring Policy. On renewal of policies with a term exceeding one year, the NCD amount with respect to each claim free policy year shall be aggregated and allowed on renewal. Aggregate amount of NCD allowed shall not exceed flat 5% of the total base premium for the term of the policy. * Base premium depends on the zone and sum insured and is the aggregate of the premium for senior most insured person and other insured persons for a year. 3.2.2 Health Check Up Expenses of health check up shall be reimbursed (irrespective of past claims) at the end of a block of two continuous policy years, provided",
+      "a 25% discount in total premium. Co-payment discount (optional) •10% Co-payment, with a 12.5% discount in total premium. Long Term Discount Discount of 4% for 2 year policy and Discount of 7.5% for 3 year policy No Maternity/ Infertility Discount Discount of 3%, above 45 years of age Add-ons (cover available on payment of additional premium) INR 10,000/ 15,000/ 20,000/ 25,000/ 30,000/ 35,000/ 40,000/ 45,000/ 50,000, subject to 10% National Home Care Treatment Add-On of Basic SI under base Policy. National Non-Medical Expenses Add-on (available to SI 5 Up to 10% of Basic Sum Insured (excluding Cumulative Bonus, if any) of base Policy and lacs & above) shall be part of the base Policy Basic Sum Insured (excluding Cumulative Bonus, if any). * The limit shall not apply if the treatment is undergone for a listed procedure in a Preferred Provider Network (PPN) as a package. ** The limit shall not apply if the treatment is undergone for a listed procedure in a Preferred Provider Network (PPN) as a package *** Critical Illness benefit amount should not be more than the sum insured opted under the Policy National Insurance Co. Ltd. National Parivar Mediclaim Plus Policy Premises No.",
+      "Notwithstanding anything contained herein or otherwise, no refunds of premium shall be made in respect of Cancellation where,\nany claim has been admitted or has been lodged or any benefit has been availed under the Policy."
+    ],
+    "timestamp": "2025-08-02T16:28:21.462616+05:30"
   },
   {
-    "expand_query": "< Optimised Query: \"importance and advantages of preventive health check-ups in insurance policy benefits, healthcare contractual terms, and risk management strategies\" >",
-    "timestamp": "2025-08-02T15:33:11.909061+05:30"
+    "expand_query": "< Optimised Query: \"National Parivar Mediclaim Plus Policy renewal grace period, migration process, premium payment terms, coverage continuity, tax benefits under Section 80D, and National Insurance Co. guidelines\" >",
+    "timestamp": "2025-08-02T16:28:21.900145+05:30"
+  },
+  {
+    "answer_query": "Yes, the medical expenses for an organ donor's hospitalization during the policy period for harvesting the organ donated to an insured person are covered under the policy. However, this coverage is subject to the following conditions:\n\n1. The organ donation must comply with the Transplantation of Human Organs Act 1994 and its amendments.\n2. The organ must be used for an insured person who has been medically advised to undergo an organ transplant.\n3. The medical expenses must be incurred for the organ donor as an in-patient in a hospital.\n4. A claim must have been admitted under the In-patient Treatment Section for the insured person undergoing the organ transplant.\n\nPlease note, exclusions include pre-hospitalization and post-hospitalization medical expenses of the",
+    "timestamp": "2025-08-02T16:28:22.455262+05:30"
   },
   {
     "check_content": "answer_query",
-    "timestamp": "2025-08-02T15:33:12.589604+05:30"
+    "timestamp": "2025-08-02T16:28:25.735359+05:30"
   },
   {
-    "answer_query": "No relevant context found on the importance and advantages of preventive health check-ups in insurance policy benefits, healthcare contractual terms, and risk management strategies.",
-    "timestamp": "2025-08-02T15:33:13.307430+05:30"
+    "check_content": "answer_query",
+    "timestamp": "2025-08-02T16:28:26.298071+05:30"
+  },
+  {
+    "answer_query": "The retrieved information does not specifically mention the grace period for premium payment under the National Parivar Mediclaim Plus Policy. It only provides general references to policy migration, renewal, and related terms. For precise details on the grace period, it is recommended to refer to the policy document or contact National Insurance Co. Ltd. directly.",
+    "timestamp": "2025-08-02T16:28:26.925788+05:30"
+  },
+  {
+    "answer_query": "The No Claim Discount (NCD) offered in this policy is a flat 5% on the base premium, provided no claims are reported in the expiring policy. For policies exceeding one year, the NCD amount for each claim-free year is aggregated, but the total NCD allowed shall not exceed 5% of the base premium for the term of the policy.",
+    "timestamp": "2025-08-02T16:28:27.405734+05:30"
   }
 ]

@@ -260,18 +260,20 @@ async def process_query(query: str, collection_name: str) -> Tuple[str, str]:
     result = await asyncio.to_thread(lambda: app.invoke(initial_state, config={"recursion_limit": 500}))
     return query, result['messages'][-1].content
 
-async def parallel_orchestrator(queries: List[str], collection_name: str) -> Dict[str, str]:
+async def parallel_orchestrator(queries: List[str], collection_name: str) -> List[Dict[str, str]]:
     """
     Run multiple queries in parallel and return their answers.
     """
     tasks = [process_query(q,collection_name) for q in queries]
     completed = await asyncio.gather(*tasks)
-    return dict(completed)
 
-def graph_orchestrator_run(list_of_questions: List[str], collection_name: str)->Dict[str, str]:
+    results = [
+        {
+            "question_no": idx + 1,
+            "question": query,
+            "answer": answer
+        }
+        for idx, (query, answer) in enumerate(completed)
+    ]
 
-    start = time.time()
-    responses = asyncio.run(parallel_orchestrator(list_of_questions,collection_name))
-    print("Graph Ended in: ",time.time()-start)
-
-    return responses
+    return results

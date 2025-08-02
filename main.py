@@ -4,12 +4,12 @@ from download_pdf import download_pdf
 from chunking import process_and_chunk_pdf
 # from qdrant_connect import create_collection, insert_data_in_batches, delete_collection
 from async_qdrant import create_collection, insert_data_parallel, delete_collection
-from graph_orchestrator import graph_orchestrator_run
+from graph_orchestrator import parallel_orchestrator
 from question_list import list_of_questions
 from utility import save_responses
 import asyncio
 
-def main() -> None:
+async def main() -> None:
     """Executes the full RAG pipeline from a JSON input file and returns the results."""
 
     begin = time.time()
@@ -17,7 +17,7 @@ def main() -> None:
 
     path = '''https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D'''
 
-    collection_name = "my_document_store_47"
+    collection_name = "my_document_store_48"
 
     is_downloaded = download_pdf(path)
     print("PDF status: ", is_downloaded)
@@ -26,24 +26,24 @@ def main() -> None:
 
 
     start = time.time()
-    all_chunks = process_and_chunk_pdf()
+    all_chunks = process_and_chunk_pdf(chunk_size=1200)
     print("Chunks status: ", len(all_chunks))
     print("Chunks created in: ", time.time()-start)
 
 
     start = time.time()
-    is_created = asyncio.run(create_collection(collection_name))
+    is_created = await create_collection(collection_name)
     print("Collection status: ", is_created)
     print("Collection created in: ", time.time()-start)
 
 
     start = time.time()
-    is_inserted = asyncio.run(insert_data_parallel(all_chunks,collection_name))
+    is_inserted = await insert_data_parallel(all_chunks,collection_name)
     print("Insert status: ", is_inserted)
     print("Chunks insert in: ", time.time()-start)
 
     start = time.time()
-    responses = graph_orchestrator_run(list_of_questions, collection_name)
+    responses = await parallel_orchestrator(list_of_questions, collection_name)
     save_responses(responses)
     print("Query status: ", len(responses))
     print("Query answered in: ", time.time()-start)
@@ -53,8 +53,8 @@ def main() -> None:
     os.remove('temp.pdf')
     print("Deleted PDF")
 
-    is_deleted = asyncio.run(delete_collection(collection_name))
+    is_deleted = await delete_collection(collection_name)
     print("Connection deleted status: ", is_deleted)
 
     
-main()
+asyncio.run(main())
