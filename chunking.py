@@ -5,12 +5,10 @@ from typing import List
 
 import fitz  # PyMuPDF
 from dotenv import load_dotenv
-
+import time
 from langchain.docstore.document import Document
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_experimental.text_splitter import SemanticChunker
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_openai import AzureOpenAIEmbeddings
 
 
 load_dotenv()
@@ -28,16 +26,6 @@ def recursive_split(text: str, chunk_size: int = 1000, chunk_overlap: int = 200)
     return splitter.split_text(text)
 
 
-def semantic_chunker(text: str) -> List[str]:
-    """
-    Given a block of text, first apply recursive_split(), then
-    semantically re‑split each segment via Azure embeddings.
-    """
-    chunks: List[str] = []
-    for segment in recursive_split(text):
-        chunker = SemanticChunker(embeddings_model)
-        chunks.extend(chunker.split_text(segment))
-    return chunks
 
 def extract_chunks_from_pdf(pdf_path: str, chunk_size: str = 1000, chunk_overlap: str = 200) -> List[Document]:
     docs: List[Document] = []
@@ -45,7 +33,7 @@ def extract_chunks_from_pdf(pdf_path: str, chunk_size: str = 1000, chunk_overlap
     pdf = fitz.open(pdf_path)
 
     for page_idx, page in enumerate(pdf, start=1):
-        print(f"📖  Reading page {page_idx}")
+        # print(f"📖  Reading page {page_idx}")
         raw = re.sub(r"\s+", " ", page.get_text("text")).strip()
         if not raw:
             continue
@@ -92,7 +80,9 @@ if __name__ == "__main__":
     # Avoid re‑chunking if you’ve already saved:
     docs = []
     if not docs:
+        start = time.time()
         docs = extract_chunks_from_pdf(PDF_PATH)
         save_docs(docs,"new_docs.json")
+        print("Chunking Ended in ",time.time()-start)
 
-    print(f"✅ Ready with {len(docs)} semantic chunks.")
+    print(f"✅ Ready with {len(docs)} recursive chunks.")

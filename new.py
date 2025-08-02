@@ -8,30 +8,26 @@ from typing import List, Dict, Any, TypedDict
 from dotenv import load_dotenv
 import pandas as pd
 import pdfplumber
-from qdrant_client import QdrantClient, models
-from sentence_transformers import CrossEncoder
-from langchain_core.documents import Document
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_groq import ChatGroq
+from langchain.docstore.document import Document
 from langchain_openai import AzureOpenAIEmbeddings
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langgraph.graph import StateGraph, END
-
+from chunking import save_docs
+import time
 # --- Global Configuration ---
 load_dotenv()
 COLLECTION_NAME = "my_final_policy_documents"
 AZURE_ADA_002_VECTOR_SIZE = 1536
 RERANKER_MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 EMBEDDINGS_MODEL_NAME = "text-embedding-ada-002"
-AZURE_EMBEDDING_ENDPOINT = os.getenv('azure_embedding_endpoint')
-AZURE_EMBEDDING_API = os.getenv('azure_embedding_api')
+AZURE_EMBEDDING_ENDPOINT = os.getenv('AZURE_OPENAI_EMBEDDING_URL')
+AZURE_EMBEDDING_API = os.getenv('AZURE_OPENAI_EMBEDDING_API')
 
 # ==============================================================================
 # PART 1: DOCUMENT PROCESSOR
 # ==============================================================================
 
-def download_pdf(url: str, save_path: str) -> bool:
+def download_pdf(url: str, save_path: str = "temp.pdf") -> bool:
     """Downloads a PDF from a URL and saves it locally."""
     try:
         print(f"⬇️  Downloading PDF from {url}...")
@@ -46,7 +42,7 @@ def download_pdf(url: str, save_path: str) -> bool:
         return False
 
 
-def process_pdf(pdf_path: str) -> List[Dict[str, Any]]:
+def process_pdf(pdf_path: str = "temp.pdf") -> List[Dict[str, Any]]:
     """Extracts text and tables from all pages of a PDF using pdfplumber."""
     if not os.path.exists(pdf_path):
         print(f"❌ File not found at '{pdf_path}'")
@@ -103,8 +99,9 @@ def chunk_content(extracted_content: List[Dict[str, Any]]) -> List[Document]:
     
     for item in extracted_content:
         metadata = {"source_pdf": "ingested_document", "page_number": item["page_number"]}
-        
-        initial_chunks = recursive_splitter.split_text(item["content"])
+        initial_chunks = [item["content"]]
+        if item['type'] == 'text':
+            initial_chunks = recursive_splitter.split_text(item["content"])
         semantic_chunks = semantic_splitter.split_text("\n---\n".join(initial_chunks))
         
         for chunk in semantic_chunks:
@@ -114,14 +111,29 @@ def chunk_content(extracted_content: List[Dict[str, Any]]) -> List[Document]:
     return final_chunks
 
 
-def run_complete_pipeline(json_path: str) -> list:
+def run_complete_pipeline() -> None:
     """Executes the full RAG pipeline from a JSON input file and returns the results."""
 
-    with open(json_path, 'r') as f: input_data = json.load(f)
-    pdf_url, questions = input_data["pdf_blob_url"], input_data["list_of_questions"]
-    local_pdf_path = "temp_document.pdf"
+    begin = time.time()
+    start = time.time()
+    path = '''https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D'''
+    is_downloaded = download_pdf(path)
+    print("PDF Downloaded in: ", time.time()-start)
+    # print("PDF status: ", is_downloaded)
+
+    start = time.time()
+    all_text = process_pdf()
+    # print("Text: ",len(all_text),all_text[-1])
+    print("Text extracted in: ", time.time()-start)
+    
+    start = time.time()
+    all_chunks = chunk_content(all_text)
+    # print("Chunks: ",len(all_chunks), all_chunks[-1])
+    print("Chunks extracted in: ", time.time()-start)
+    # save_docs(all_chunks,'new_chunks.json')
+    print("Process ended in: ",time.time()-begin)
+
+
 
     
-    os.remove(local_pdf_path)
-    print(f"\n✅ Pipeline complete. Cleaned up temporary file.")
-    return final_results
+run_complete_pipeline()

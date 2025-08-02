@@ -25,3 +25,5 @@ langchain_groq
 
 # draw
 IPython
+pandas 
+pdfplumber
