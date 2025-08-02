@@ -140,7 +140,7 @@ def check_docs_content(state: AgentState) -> AgentState:
     """
     prompt = SystemMessage(
         content=(
-            "You are a RAG assistant in legal, insurance, contract, policy domains which checks whether retrieved context answer user's query correctly and precisely."
+            "You are a RAG assistant in legal, insurance, contract, policy domains which checks whether retrieved context answers user's query correctly and precisely."
             "\n• If context is insufficient or irrelevant, return 'expand_query' as response."
             "\n• If context fully answers, return 'answer_query' as response."
             "\n• If 'expand_query' was already returned as reponse once, then return 'answer_query' as response to avoid loops." 
@@ -273,6 +273,8 @@ def graph_orchestrator_run(list_of_questions: List[str], collection_name: str)->
     start = time.time()
     responses = asyncio.run(parallel_orchestrator(list_of_questions,collection_name))
     print("Graph Ended in: ",time.time()-start)
+    save_responses(responses)
+
     return responses
 
 list_of_questions = [

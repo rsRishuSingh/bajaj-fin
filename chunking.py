@@ -13,10 +13,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 load_dotenv()
 
-EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
-embeddings_model = HuggingFaceEmbeddings(model_name=EMBED_MODEL_NAME)
-
-
 def recursive_split(text: str, chunk_size: int = 1000, chunk_overlap: int = 200) -> List[str]:
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
@@ -24,7 +20,6 @@ def recursive_split(text: str, chunk_size: int = 1000, chunk_overlap: int = 200)
         separators=["\n\n", "\n", ".", " "],
     )
     return splitter.split_text(text)
-
 
 
 def extract_chunks_from_pdf(pdf_path: str, chunk_size: str = 1000, chunk_overlap: str = 200) -> List[Document]:
