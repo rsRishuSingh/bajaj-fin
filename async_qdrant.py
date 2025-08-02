@@ -12,14 +12,16 @@ warnings.filterwarnings("ignore", category=FutureWarning, module="torch")
 load_dotenv()
 
 # Initialize embedder and async Qdrant client
-embedder = SentenceTransformer(os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2"))
+embedder = SentenceTransformer(os.getenv("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5"))
 async_client = AsyncQdrantClient(
     url=os.getenv("QDRANT_URL"),
     api_key=os.getenv("QDRANT_API_KEY"),
+    prefer_grpc=True, # This is the key
+    timeout=30.0 # Set a reasonable timeout
 )
 
-BATCH_SIZE =  64    # Number of docs per batch
-MAX_CONCURRENT = 4    # Number of parallel upsert tasks
+BATCH_SIZE =  48    # Number of docs per batch
+MAX_CONCURRENT = 6    # Number of parallel upsert tasks
 
 async def create_collection(collection_name: str) -> bool:
     """Ensure the Qdrant collection exists with the correct configuration."""
@@ -68,7 +70,7 @@ async def _upsert_batch(collection_name: str, batch_docs) -> None:
     await async_client.upsert(
         collection_name=collection_name,
         points=points,
-        wait=True
+        wait=False
 
     )
 

@@ -45,7 +45,7 @@ llm = AzureChatOpenAI(
 )
 
 # Initialize embedding model
-embedder = SentenceTransformer(os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2"))
+embedder = SentenceTransformer(os.getenv("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5"))
 
 # Initialize Qdrant client
 qdrant_client = QdrantClient(
@@ -122,10 +122,10 @@ def check_query_agent(state: AgentState) -> AgentState:
         content=(
             "You are the RAG orchestrator which looks at query given by user after uploading the document of legal, insurance, contract, policy domains. Analyze the query and perform one of following task:"
             f"\n 1) Call hybrid_search Tool for document retrieval with collection_name: {state['collection_name']}."
-            "\ndefault top 5 chunks are retrieved from hybrid_search in first cycle but if query has been expanded by expand_query retrieve top 10 chunks"
+            "\nDefault top 5 chunks are retrieved from hybrid_search in first cycle but if query has been expanded by expand_query retrieve top 10 chunks"
             "\n 2) Return 'Ambiguous query' or 'Insufficient query' as response in format \n<response here> only and only when query is not creating any meaning."
             "\nDo not change query"
-            f"\nRECENT CONVERSATION:\n{get_context(state,20)}"
+            f"\nRECENT CONVERSATION:\n{get_context(state,10)}"
         )
     )
     query = state["query"]
@@ -148,7 +148,7 @@ def check_docs_content(state: AgentState) -> AgentState:
             "\n• If context fully answers, return 'answer_query' as response."
             "\n• If 'expand_query' was already returned as reponse once, then return 'answer_query' as response to avoid loops." 
             "\n make sure 'expand_query' is called only once in entire flow"
-            f"\nRECENT CONVERSATION:\n{get_context(state,20)}"
+            f"\nRECENT CONVERSATION:\n{get_context(state,10)}"
             "\nResponse format must be like:\n<response here>"
         )
     )
@@ -163,7 +163,7 @@ def expand_query(state: AgentState) -> AgentState:
     """
     system = SystemMessage(
         content=(
-            "You are a query expansion assistant in legal, insurance, contract, policy domains. Produce exactly one optimized search query."
+            "You are a query expansion assistant which looks at query given by user after uploading the document of legal, insurance, contract, policy domains. And  content retrieved then frames a query to get more relevent context from hybrid search."
 
         )
     )
@@ -187,10 +187,10 @@ def answer_query(state: AgentState) -> AgentState:
     """
     prompt = SystemMessage(
         content=(
-            "You are a RAG assistant in legal, insurance, contract, policy domains which buildis the final response to answer user query." 
+            "You are a helpful RAG assistant specialised legal, insurance, contract, policy domains which builds the final response to answer user query from given context retrieved from user uploaded document." 
             "\nGive to the detailed answer from retrieved context from hybrid_search tool only"
-            "\nAnswer the question in 1 or 2 lines or 3 lines at max"
-            "\nDo not drift away from main query "
+            "\nAnswer the question in 3 lines or less."
+            "\nDo not drift away from main query & provide numberical data where necessary."
             "\nDo not hallucinate and acknowledge any missing data or no relevent context."
             f"\nContext: {get_context(state,20)}"
             "\nResponse format must be like:\n<response here>"

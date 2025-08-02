@@ -11,41 +11,97 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
+
 load_dotenv()
 
-def recursive_split(text: str, chunk_size: int = 1000, chunk_overlap: int = 200) -> List[str]:
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size,
-        chunk_overlap=chunk_overlap,
-        separators=["\n\n", "\n", ".", " "],
-    )
-    return splitter.split_text(text)
+def process_and_chunk_pdf(
+    pdf_path: str = "temp.pdf",
+    chunk_size: int = 1000,
+    chunk_overlap: int = 200
+) -> List[Document]:
+    """
+    Fast PDF extractor & chunker using fitz (PyMuPDF):
+      - Bulk-extracts text from all pages and splits once.
+      - Extracts tables as simple row/tab-joined strings.
 
+    Args:
+        pdf_path: Path to PDF file.
+        chunk_size: Max characters per text chunk.
+        chunk_overlap: Overlap between chunks.
 
-def extract_chunks_from_pdf(pdf_path: str = "temp.pdf", chunk_size: str = 1000, chunk_overlap: str = 200) -> List[Document]:
-    docs: List[Document] = []
+    Returns:
+        List of Document objects with metadata.
+    """
+    if not os.path.exists(pdf_path):
+        print(f"❌ File not found: {pdf_path}")
+        return []
+
     print(f"🗂️  Opening PDF: {pdf_path}")
-    pdf = fitz.open(pdf_path)
+    raw_text_blocks: List[str] = []
+    table_docs: List[Document] = []
 
-    for page_idx, page in enumerate(pdf, start=1):
-        # print(f"📖  Reading page {page_idx}")
-        raw = re.sub(r"\s+", " ", page.get_text("text")).strip()
-        if not raw:
-            continue
+    # Use a 'with' statement for clean resource management
+    with fitz.open(pdf_path) as doc:
+        for page_num, page in enumerate(doc, start=1):
+            # 1. Collect and clean text from the page
+            text = page.get_text("text") or ""
+            cleaned = re.sub(r"\s+", " ", text).strip()
+            if cleaned:
+                raw_text_blocks.append(cleaned)
 
-        for chunk_idx, chunk in enumerate(recursive_split(raw, chunk_size,chunk_overlap)):
-            docs.append(
-                Document(
-                    page_content=chunk,
+            # 2. Extract tables using fitz's find_tables() method
+            for tbl_idx, table in enumerate(page.find_tables(), start=1):
+                # The extract() method gets the table content as a list of lists
+                table_data = table.extract()
+                if not table_data:
+                    continue
+
+                # Convert table data to a tab-separated string
+                rows = ["\t".join(map(str, row)) for row in table_data]
+                table_str = "\n".join(rows).strip()
+                if not table_str:
+                    continue
+                
+                # Create a Document for the table
+                table_docs.append(Document(
+                    page_content=table_str,
                     metadata={
-                        "page": page_idx,
-                        "chunk": chunk_idx,
-                        "source": os.path.basename(pdf_path),
-                    },
-                )
+                        "source_pdf": os.path.basename(pdf_path),
+                        "page_number": page_num,
+                        "type": f"table_{tbl_idx}"
+                    }
+                ))
+
+    # 3. Bulk-split all collected text blocks at once
+    # This logic remains identical to the original function
+    if raw_text_blocks:
+        print("🧠 Bulk-splitting text…")
+        splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap,
+            separators=["\n\n", "\n", ". ", " ", ""], # Recommended separators
+        )
+        combined_text = "\n\n".join(raw_text_blocks)
+        text_chunks = splitter.split_text(combined_text)
+
+        text_docs = [
+            Document(
+                page_content=chunk,
+                metadata={
+                    "source_pdf": os.path.basename(pdf_path),
+                    "type": "text",
+                    "chunk_index": idx + 1
+                }
             )
-    pdf.close()
-    return docs
+            for idx, chunk in enumerate(text_chunks)
+        ]
+    else:
+        text_docs = []
+
+
+    all_docs = text_docs + table_docs
+    print(f"✅ Created {len(text_docs)} text chunks + {len(table_docs)} tables = {len(all_docs)} docs")
+    return all_docs
 
 
 def save_docs(docs: List[Document], filepath: str = "all_docs.json") -> None:
@@ -74,6 +130,6 @@ if __name__ == "__main__":
     docs = []
     if not docs:
         start = time.time()
-        docs = extract_chunks_from_pdf()
+        docs = process_and_chunk_pdf()
         save_docs(docs,"new_docs.json")
         print("Chunking Ended in ",time.time()-start)
