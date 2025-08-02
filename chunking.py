@@ -1,83 +1,84 @@
 import os
-import json
-import re
 from typing import List
+import re
 
-import fitz  # PyMuPDF
-from dotenv import load_dotenv
-import time
+import pdfplumber
 from langchain.docstore.document import Document
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
-load_dotenv()
+def process_and_chunk_pdf(
+    pdf_path: str = "temp.pdf",
+    chunk_size: int = 1000,
+    chunk_overlap: int = 200
+) -> List[Document]:
+    """
+    Fast PDF extractor & chunker:
+      - Bulk-extracts text from all pages and splits once.
+      - Extracts tables as simple row/tab-joined strings.
 
-def recursive_split(text: str, chunk_size: int = 1000, chunk_overlap: int = 200) -> List[str]:
+    Args:
+        pdf_path: Path to PDF file.
+        chunk_size: Max characters per text chunk.
+        chunk_overlap: Overlap between chunks.
+
+    Returns:
+        List of Document objects with metadata.
+    """
+    if not os.path.exists(pdf_path):
+        print(f"❌ File not found: {pdf_path}")
+        return []
+
+    print(f"🗂️  Opening PDF: {pdf_path}")
+    raw_text_blocks: List[str] = []
+    table_docs: List[Document] = []
+
+    with pdfplumber.open(pdf_path) as pdf:
+        for page_num, page in enumerate(pdf.pages, start=1):
+            # collect and clean text
+            text = page.extract_text() or ""
+            cleaned = re.sub(r"\s+", " ", text).strip()
+            if cleaned:
+                raw_text_blocks.append(cleaned)
+
+            # extract simple table strings
+            for tbl_idx, table in enumerate(page.extract_tables(), start=1):
+                if not table:
+                    continue
+                rows = ["\t".join(map(str, row)) for row in table]
+                table_str = "\n".join(rows).strip()
+                if not table_str:
+                    continue
+                table_docs.append(Document(
+                    page_content=table_str,
+                    metadata={
+                        "source_pdf": os.path.basename(pdf_path),
+                        "page_number": page_num,
+                        "type": f"table_{tbl_idx}"
+                    }
+                ))
+
+    # bulk-split all text blocks
+    print("🧠 Bulk-splitting text…")
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
-        chunk_overlap=chunk_overlap,
-        separators=["\n\n", "\n", ".", " "],
+        chunk_overlap=chunk_overlap
     )
-    return splitter.split_text(text)
+    combined_text = "\n\n".join(raw_text_blocks)
+    text_chunks = splitter.split_text(combined_text)
 
-
-def extract_chunks_from_pdf(pdf_path: str, chunk_size: str = 1000, chunk_overlap: str = 200) -> List[Document]:
-    docs: List[Document] = []
-    print(f"🗂️  Opening PDF: {pdf_path}")
-    pdf = fitz.open(pdf_path)
-
-    for page_idx, page in enumerate(pdf, start=1):
-        # print(f"📖  Reading page {page_idx}")
-        raw = re.sub(r"\s+", " ", page.get_text("text")).strip()
-        if not raw:
-            continue
-
-        for chunk_idx, chunk in enumerate(recursive_split(raw, chunk_size,chunk_overlap)):
-            docs.append(
-                Document(
-                    page_content=chunk,
-                    metadata={
-                        "page": page_idx,
-                        "chunk": chunk_idx,
-                        "source": os.path.basename(pdf_path),
-                    },
-                )
-            )
-    pdf.close()
-    return docs
-
-
-def save_docs(docs: List[Document], filepath: str = "all_docs.json") -> None:
-    print(f"📥  Saving {len(docs)} chunks → {filepath}")
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(
-            [{"page_content": d.page_content, "metadata": d.metadata} for d in docs],
-            f,
-            indent=2,
-            ensure_ascii=False,
+    text_docs = [
+        Document(
+            page_content=chunk,
+            metadata={
+                "source_pdf": os.path.basename(pdf_path),
+                "type": "text",
+                "chunk_index": idx + 1
+            }
         )
+        for idx, chunk in enumerate(text_chunks)
+    ]
 
-
-def load_docs(filepath: str = "all_docs.json") -> List[Document]:
-    if not os.path.exists(filepath):
-        return []
-    print(f"📤  Loading chunks from {filepath}")
-    with open(filepath, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return [Document(page_content=d["page_content"], metadata=d["metadata"]) for d in data]
-
-
-
-if __name__ == "__main__":
-
-    PDF_PATH = "Policy.pdf"
-    # Avoid re‑chunking if you’ve already saved:
-    docs = []
-    if not docs:
-        start = time.time()
-        docs = extract_chunks_from_pdf(PDF_PATH)
-        save_docs(docs,"new_docs.json")
-        print("Chunking Ended in ",time.time()-start)
-
-    print(f"✅ Ready with {len(docs)} recursive chunks.")
+    all_docs = text_docs + table_docs
+    print(f"✅ Created {len(text_docs)} text chunks + {len(table_docs)} tables = {len(all_docs)} docs")
+    return all_docs

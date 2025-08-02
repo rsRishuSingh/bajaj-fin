@@ -4,14 +4,11 @@ import time
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient, models
 from sentence_transformers import SentenceTransformer
-from chunking import load_docs, save_docs, extract_chunks_from_pdf
-from utils.answer import generate_answer
 import warnings
+
 warnings.filterwarnings("ignore", category=FutureWarning, module="torch")
 
 load_dotenv()
-collection_name = "my_document_store_40"
-
 embedder = SentenceTransformer(os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2"))
 
 qdrant_client = QdrantClient(
@@ -39,7 +36,7 @@ def create_collection(collection_name):
         print(f"Error creating or verifying collection: {e}")
         return False
 
-def insert_data_in_batches(docs, collection_name):
+def insert_data_in_batches(docs, collection_name)->bool:
     """
     Encodes documents and inserts them into Qdrant in batches to avoid timeouts.
     """
@@ -81,12 +78,13 @@ def insert_data_in_batches(docs, collection_name):
         except Exception as e:
             print(f"  - Error uploading batch {i//BATCH_SIZE + 1}: {e}")
             print("  - Skipping this batch and continuing...")
-            continue # Or use 'break' to stop the entire process
+            return False
             
         #small delay to avoid overwhelming the server
         time.sleep(0.1)
 
     print("All data has been processed.")
+    return True
 
 
     
