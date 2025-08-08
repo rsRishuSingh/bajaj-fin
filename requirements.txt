@@ -27,3 +27,4 @@ langchain_groq
 IPython
 pandas 
 pdfplumber
+azure-ai-documentintelligence
