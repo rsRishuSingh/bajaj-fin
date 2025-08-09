@@ -1,0 +1,114 @@
+[
+  {
+    "page_content": "🧠 Mission Brief — Sachin's Parallel World Discovery \"The \u0000ights are live, but the codes are scrambled. It's time to explore, understand, and \u0000y.\" — HackRx Core Team 🌍 The Strange New World Sachin, one of the core members of HackRx, woke up in a strange version of Earth. Everything looked familiar — the air, the people, the languages — but something was… off. He walked through the streets of a place that seemed like Delhi. But there it was — the Gateway of India standing tall where India Gate should be. Confused, Sachin kept exploring. He realized he had landed in a parallel world, where famous landmarks existed, but they were in the wrong cities. Each city had been swapped with the identity of another, and now it was up to Sachin — and you — to make sense of this twisted map. Your goal: Find the \u0000ight number which takes him the real world 🧩 A Tangled Trail — What Sachin Noticed \u0000 Indian Cities Landmark Current Location 🏛 Gateway of India Delhi 🏛 India Gate Mumbai 🕌 Charminar Chennai 🏖",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "type": "text",
+      "chunk_index": 1
+    }
+  },
+  {
+    "page_content": "🧩 A Tangled Trail — What Sachin Noticed \u0000 Indian Cities Landmark Current Location 🏛 Gateway of India Delhi 🏛 India Gate Mumbai 🕌 Charminar Chennai 🏖 Marina Beach Hyderabad 🌉 Howrah Bridge Ahmedabad 🏰 Golconda Fort Mysuru 🗼 Qutub Minar Kochi Page 1 of 4",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "type": "text",
+      "chunk_index": 2
+    }
+  },
+  {
+    "page_content": "Landmark Current Location ❤ Taj Mahal Hyderabad ⛩ Meenakshi Temple Pune 🌸 Lotus Temple Nagpur 👑 Mysore Palace Chandigarh 🪨 Rock Garden Kerala 🏛 Victoria Memorial Bhopal 🏢 Vidhana Soudha Varanasi 🌞 Sun Temple Jaisalmer ✨ Golden Temple Pune 🌍 International Cities Landmark Current Location 🗼 Eiffel Tower New York 🗽 Statue of Liberty London 🕰 Big Ben Tokyo 🏟 Colosseum Be\u0000ing 🎭 Sydney Opera House London ✝ Christ the Redeemer Bangkok 🏙 Burj Khalifa Toronto 🗼 CN Tower Dubai 🏢 Petronas Towers Amsterdam 🏛 Leaning Tower of Pisa Cairo 🗻 Mount Fuji San Francisco 🌊 Niagara Falls Berlin 🖼 Louvre Museum Barcelona 🪨 Stonehenge Moscow 🕍 Sagrada Familia Seoul 🏛 Acropolis Cape Town 🕰 Big Ben Istanbul Page 2 of 4",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "type": "text",
+      "chunk_index": 3
+    }
+  },
+  {
+    "page_content": "Landmark Current Location 🏞 Machu Picchu Riyadh ❤ Taj Mahal Paris 🗿 Moai Statues Dubai Airport ⛪ Christchurch Cathedral Singapore 🏙 The Shard Jakarta 🕌 Blue Mosque Vienna 🏰 Neuschwanstein Castle Kathmandu 👑 Buckingham Palace Los Angeles 🛰 Space Needle Mumbai 🌆 Times Square Seoul 📜 Mission Objective Your mission is to: \u0000. Get the city name \u0000. Decode the city behind the landmark \u0000. Choose the correct \u0000ight path \u0000. Submit the \u0000nal \u0000ight number 🚦 Step-by-Step Guide 🔍 Step 1: Query the Secret City Call this endpoint to get the city name: GET https://register.hackrx.in/submissions/myFavouriteCity You'll receive a city name like \"Chennai\". 🧠 Step 2: Decode the City Look at the city returned from the API response. Use Sachin's travel notes above to map the city to its landmark, then follow the instructions to call the appropriate tool. Page 3 of 4",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "type": "text",
+      "chunk_index": 4
+    }
+  },
+  {
+    "page_content": "Example: If the response is \"Chennai\", look it up in the table to \u0000nd it has the Charminar landmark. Then based on the instructions, call the appropriate endpoint. ✈ Step 3: Choose Your Flight Path Once you know the landmark associated with your favorite city, follow these instructions: \u0000. If landmark belonging to favourite city is \"Gateway of India\", call: GET https://register.hackrx.in/teams/public/flights/getFirstCityFlightNumber \u0000. If landmark belonging to favourite city is \"Taj Mahal\", call: GET https://register.hackrx.in/teams/public/flights/getSecondCityFlightNumber \u0000. If landmark belonging to favourite city is \"Eiffel Tower\", call: GET https://register.hackrx.in/teams/public/flights/getThirdCityFlightNumber \u0000. If landmark belonging to favourite city is \"Big Ben\", call: GET https://register.hackrx.in/teams/public/flights/getFourthCityFlightNumber \u0000. For all other landmarks, call: GET https://register.hackrx.in/teams/public/flights/getFifthCityFlightNumber 💾 Final Deliverable",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "type": "text",
+      "chunk_index": 5
+    }
+  },
+  {
+    "page_content": "\u0000. For all other landmarks, call: GET https://register.hackrx.in/teams/public/flights/getFifthCityFlightNumber 💾 Final Deliverable Return the correct \u0000ight number based on your answer. Only those who observe carefully will reach their true destination. Good luck, explorer! May the parallel worlds guide your journey home. Page 4 of 4",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "type": "text",
+      "chunk_index": 6
+    }
+  },
+  {
+    "page_content": "🧠 Mission Brief — Sachin's Parallel World\nDiscovery\n\"The \u0000ights are live, but the codes are scrambled. It's time to explore, understand, and \u0000y.\"\n— HackRx Core Team\n🌍 The Strange New World\nSachin, one of the core members of HackRx, woke up in a strange version of Earth. Everything looked familiar\n— the air, the people, the languages — but something was… off.\nHe walked through the streets of a place that seemed like Delhi. But there it was — the Gateway of India\nstanding tall where India Gate should be. Confused, Sachin kept exploring.\nHe realized he had landed in a parallel world, where famous landmarks existed, but they were in the wrong\ncities.\nEach city had been swapped with the identity of another, and now it was up to Sachin — and you — to make\nsense of this twisted map.\nYour goal: Find the \u0000ight number which takes him the real world\n🧩 A Tangled Trail — What Sachin Noticed\n\u0000 Indian Cities\nLandmark Current Location\n🏛 Gateway of India Delhi\n🏛 India Gate Mumbai\n🕌 Charminar Chennai\n🏖 Marina Beach Hyderabad\n🌉 Howrah Bridge Ahmedabad\n🏰 Golconda Fort Mysuru\n🗼 Qutub Minar Kochi\nPage 1 of",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "page_number": 1,
+      "type": "table_1"
+    }
+  },
+  {
+    "page_content": "Landmark\tCurrent Location\n🏛 Gateway of India\tDelhi\n🏛 India Gate\tMumbai\n🕌 Charminar\tChennai\n🏖 Marina Beach\tHyderabad\n🌉 Howrah Bridge\tAhmedabad\n🏰 Golconda Fort\tMysuru\n🗼 Qutub Minar\tKochi",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "page_number": 1,
+      "type": "table_2"
+    }
+  },
+  {
+    "page_content": "None\t\tNone\n\tLandmark Current Location\n❤ Taj Mahal Hyderabad\n⛩ Meenakshi Temple Pune\n🌸 Lotus Temple Nagpur\n👑 Mysore Palace Chandigarh\n🪨 Rock Garden Kerala\n🏛 Victoria Memorial Bhopal\n🏢 Vidhana Soudha Varanasi\n🌞 Sun Temple Jaisalmer\n✨ Golden Temple Pune\n🌍 International Cities\nLandmark Current Location\n🗼 Eiffel Tower New York\n🗽 Statue of Liberty London\n🕰 Big Ben Tokyo\n🏟 Colosseum Be\u0000ing\n🎭 Sydney Opera House London\n✝ Christ the Redeemer Bangkok\n🏙 Burj Khalifa Toronto\n🗼 CN Tower Dubai\n🏢 Petronas Towers Amsterdam\n🏛 Leaning Tower of Pisa Cairo\n🗻 Mount Fuji San Francisco\n🌊 Niagara Falls Berlin\n🖼 Louvre Museum Barcelona\n🪨 Stonehenge Moscow\n🕍 Sagrada Familia Seoul\n🏛 Acropolis Cape Town\n🕰 Big Ben Istanbul\nPage 2 of\t4\nNone\t\tNone",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "page_number": 2,
+      "type": "table_1"
+    }
+  },
+  {
+    "page_content": "Landmark\tCurrent Location\n❤ Taj Mahal\tHyderabad\n⛩ Meenakshi Temple\tPune\n🌸 Lotus Temple\tNagpur\n👑 Mysore Palace\tChandigarh\n🪨 Rock Garden\tKerala\n🏛 Victoria Memorial\tBhopal\n🏢 Vidhana Soudha\tVaranasi\n🌞 Sun Temple\tJaisalmer\n✨ Golden Temple\tPune",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "page_number": 2,
+      "type": "table_2"
+    }
+  },
+  {
+    "page_content": "Landmark\tCurrent Location\n🗼 Eiffel Tower\tNew York\n🗽 Statue of Liberty\tLondon\n🕰 Big Ben\tTokyo\n🏟 Colosseum\tBe\u0000ing\n🎭 Sydney Opera House\tLondon\n✝ Christ the Redeemer\tBangkok\n🏙 Burj Khalifa\tToronto\n🗼 CN Tower\tDubai\n🏢 Petronas Towers\tAmsterdam\n🏛 Leaning Tower of Pisa\tCairo\n🗻 Mount Fuji\tSan Francisco\n🌊 Niagara Falls\tBerlin\n🖼 Louvre Museum\tBarcelona\n🪨 Stonehenge\tMoscow\n🕍 Sagrada Familia\tSeoul\n🏛 Acropolis\tCape Town\n🕰 Big Ben\tIstanbul",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "page_number": 2,
+      "type": "table_3"
+    }
+  },
+  {
+    "page_content": "None\t\tNone\n\tLandmark Current Location\n🏞 Machu Picchu Riyadh\n❤ Taj Mahal Paris\n🗿 Moai Statues Dubai Airport\n⛪ Christchurch Cathedral Singapore\n🏙 The Shard Jakarta\n🕌 Blue Mosque Vienna\n🏰 Neuschwanstein Castle Kathmandu\n👑 Buckingham Palace Los Angeles\n🛰 Space Needle Mumbai\n🌆 Times Square Seoul\n📜 Mission Objective\nYour mission is to:\n\u0000. Get the city name\n\u0000. Decode the city behind the landmark\n\u0000. Choose the correct \u0000ight path\n\u0000. Submit the \u0000nal \u0000ight number\n🚦 Step-by-Step Guide\n🔍 Step 1: Query the Secret City\nCall this endpoint to get the city name:\nGET https://register.hackrx.in/submissions/myFavouriteCity\nYou'll receive a city name like \"Chennai\".\n🧠 Step 2: Decode the City\nLook at the city returned from the API response. Use Sachin's travel notes above to map the city to its\nlandmark, then follow the instructions to call the appropriate tool.\nPage 3 of\t4\nNone\t\tNone",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "page_number": 3,
+      "type": "table_1"
+    }
+  },
+  {
+    "page_content": "Landmark\tCurrent Location\n🏞 Machu Picchu\tRiyadh\n❤ Taj Mahal\tParis\n🗿 Moai Statues\tDubai Airport\n⛪ Christchurch Cathedral\tSingapore\n🏙 The Shard\tJakarta\n🕌 Blue Mosque\tVienna\n🏰 Neuschwanstein Castle\tKathmandu\n👑 Buckingham Palace\tLos Angeles\n🛰 Space Needle\tMumbai\n🌆 Times Square\tSeoul",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "page_number": 3,
+      "type": "table_2"
+    }
+  },
+  {
+    "page_content": "Example:\nIf the response is \"Chennai\", look it up in the table to \u0000nd it has the Charminar landmark. Then based on\nthe instructions, call the appropriate endpoint.\n✈ Step 3: Choose Your Flight Path\nOnce you know the landmark associated with your favorite city, follow these instructions:\n\u0000. If landmark belonging to favourite city is \"Gateway of India\", call:\nGET https://register.hackrx.in/teams/public/flights/getFirstCityFlightNumber\n\u0000. If landmark belonging to favourite city is \"Taj Mahal\", call:\nGET https://register.hackrx.in/teams/public/flights/getSecondCityFlightNumber\n\u0000. If landmark belonging to favourite city is \"Eiffel Tower\", call:\nGET https://register.hackrx.in/teams/public/flights/getThirdCityFlightNumber\n\u0000. If landmark belonging to favourite city is \"Big Ben\", call:\nGET https://register.hackrx.in/teams/public/flights/getFourthCityFlightNumber\n\u0000. For all other landmarks, call:\nGET https://register.hackrx.in/teams/public/flights/getFifthCityFlightNumber\n💾 Final Deliverable\nReturn the correct \u0000ight number based on your answer.\nOnly those who observe carefully will reach their true destination.\nGood luck, explorer!\nMay the parallel worlds guide your journey home.",
+    "metadata": {
+      "source_pdf": "level4.pdf",
+      "page_number": 4,
+      "type": "table_1"
+    }
+  }
+]

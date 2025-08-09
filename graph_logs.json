@@ -1,6 +1,1030 @@
 [
   {
-    "final_answer": "Your query is unclear. Please provide more context or specify the flight you are asking about.",
-    "timestamp": "2025-08-09T16:22:36.746626+05:30"
+    "analyse_pdf_content": {
+      "content": "set_goal_agent",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 4,
+          "prompt_tokens": 2364,
+          "total_tokens": 2368,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 1920
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_e6529acef4",
+        "id": "chatcmpl-C2cRkewGLhD6mhe0RpD4D3ucPBXQE",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "stop",
+        "logprobs": null,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "protected_material_code": {
+            "filtered": false,
+            "detected": false
+          },
+          "protected_material_text": {
+            "filtered": false,
+            "detected": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--63592119-306f-4f0a-8535-9ac3c5cf785e-0",
+      "example": false,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2364,
+        "output_tokens": 4,
+        "total_tokens": 2368,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 1920
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:24:39.610593+05:30"
+  },
+  {
+    "set_goal_agent": {
+      "content": "```json\n{\n  \"goal\": \"Get the correct flight number\",\n  \"steps\": [\n    {\"step\": 1, \"description\": \"Call the API endpoint 'https://register.hackrx.in/submissions/myFavouriteCity' to get the initial city name.\"},\n    {\"step\": 2, \"description\": \"Use the city name from the API response to find the corresponding landmark in the provided tables.\"},\n    {\"step\": 3, \"description\": \"Determine the appropriate flight API endpoint to call based on the landmark associated with the city.\"},\n    {\"step\": 4, \"description\": \"Call the selected flight API endpoint to retrieve the flight number.\"}\n  ]\n}\n```",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 145,
+          "prompt_tokens": 2673,
+          "total_tokens": 2818,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 2432
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_e6529acef4",
+        "id": "chatcmpl-C2cRlelo1ulvWiNKn2OX3vROsxxey",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "stop",
+        "logprobs": null,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "protected_material_code": {
+            "filtered": false,
+            "detected": false
+          },
+          "protected_material_text": {
+            "filtered": false,
+            "detected": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--2e907daf-ec8b-48ce-ae05-0ae4e4d8652c-0",
+      "example": false,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2673,
+        "output_tokens": 145,
+        "total_tokens": 2818,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:24:41.205877+05:30"
+  },
+  {
+    "perform_action_decision": {
+      "content": "",
+      "additional_kwargs": {
+        "tool_calls": [
+          {
+            "id": "call_jEvSh0YmKwDKqtBKBqMHv632",
+            "function": {
+              "arguments": "{\"url\":\"https://register.hackrx.in/submissions/myFavouriteCity\"}",
+              "name": "get_from_endpoint"
+            },
+            "type": "function"
+          }
+        ],
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 27,
+          "prompt_tokens": 2822,
+          "total_tokens": 2849,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_ee1d74bde0",
+        "id": "chatcmpl-C2cRnn8Ao7CHV9ZlDUi8casno6tsj",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "tool_calls",
+        "logprobs": null,
+        "content_filter_results": {}
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--e553e159-6f33-49ac-a41a-6ce73c164bca-0",
+      "example": false,
+      "tool_calls": [
+        {
+          "name": "get_from_endpoint",
+          "args": {
+            "url": "https://register.hackrx.in/submissions/myFavouriteCity"
+          },
+          "id": "call_jEvSh0YmKwDKqtBKBqMHv632",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2822,
+        "output_tokens": 27,
+        "total_tokens": 2849,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:24:41.957125+05:30"
+  },
+  {
+    "tool_call_get_from_endpoint": {
+      "url": "https://register.hackrx.in/submissions/myFavouriteCity",
+      "response": {
+        "success": true,
+        "message": "Favorite city retrieved successfully",
+        "status": 200,
+        "data": {
+          "city": "New York"
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:24:43.694546+05:30"
+  },
+  {
+    "perform_action_decision": {
+      "content": "The city name retrieved from the API response is \"New York.\" \n\nLooking at the provided tables, the landmark associated with \"New York\" is the \"Eiffel Tower.\"",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 37,
+          "prompt_tokens": 2880,
+          "total_tokens": 2917,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 2432
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_ee1d74bde0",
+        "id": "chatcmpl-C2cRp6ecsYUv2XrFGAfixuaFZf55u",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "stop",
+        "logprobs": null,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "protected_material_code": {
+            "detected": false,
+            "filtered": false
+          },
+          "protected_material_text": {
+            "detected": false,
+            "filtered": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--8294c0f9-d1dc-4451-a19a-99a764750f84-0",
+      "example": false,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2880,
+        "output_tokens": 37,
+        "total_tokens": 2917,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:24:44.518588+05:30"
+  },
+  {
+    "perform_action_decision": {
+      "content": "",
+      "additional_kwargs": {
+        "tool_calls": [
+          {
+            "id": "call_pxY1aaqbBMMQhKvoA72O1yrL",
+            "function": {
+              "arguments": "{\"url\":\"https://register.hackrx.in/teams/public/flights/getThirdCityFlightNumber\"}",
+              "name": "get_from_endpoint"
+            },
+            "type": "function"
+          }
+        ],
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2918,
+          "total_tokens": 2950,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 2432
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_ee1d74bde0",
+        "id": "chatcmpl-C2cRqxfd9qVrtuQFpVvvn2gK1zXAN",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "tool_calls",
+        "logprobs": null,
+        "content_filter_results": {}
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--57a59c30-0ae3-4346-9cfc-44740659d516-0",
+      "example": false,
+      "tool_calls": [
+        {
+          "name": "get_from_endpoint",
+          "args": {
+            "url": "https://register.hackrx.in/teams/public/flights/getThirdCityFlightNumber"
+          },
+          "id": "call_pxY1aaqbBMMQhKvoA72O1yrL",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2918,
+        "output_tokens": 32,
+        "total_tokens": 2950,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:24:45.340177+05:30"
+  },
+  {
+    "tool_call_get_from_endpoint": {
+      "url": "https://register.hackrx.in/teams/public/flights/getThirdCityFlightNumber",
+      "response": {
+        "success": true,
+        "message": "Pune flight number generated successfully",
+        "status": 200,
+        "data": {
+          "flightNumber": "d72d88"
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:24:47.175727+05:30"
+  },
+  {
+    "perform_action_decision": {
+      "content": "The flight number is **d72d88**.",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 13,
+          "prompt_tokens": 2988,
+          "total_tokens": 3001,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 2432
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_ee1d74bde0",
+        "id": "chatcmpl-C2cRtQcz14cNfHXt8uXjG50GILBQc",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "stop",
+        "logprobs": null,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "protected_material_code": {
+            "filtered": false,
+            "detected": false
+          },
+          "protected_material_text": {
+            "filtered": false,
+            "detected": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--499d7b2b-9b32-4d58-ae56-1e5d4c61b743-0",
+      "example": false,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2988,
+        "output_tokens": 13,
+        "total_tokens": 3001,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:24:47.999378+05:30"
+  },
+  {
+    "final_answer": "The flight number is **d72d88**.",
+    "timestamp": "2025-08-09T17:24:49.020960+05:30"
+  },
+  {
+    "analyse_pdf_content": {
+      "content": "set_goal_agent",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 4,
+          "prompt_tokens": 2364,
+          "total_tokens": 2368,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 1920
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_e6529acef4",
+        "id": "chatcmpl-C2cTFHCd4WfvX93Fi7LU7PvOKD4GE",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "stop",
+        "logprobs": null,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "protected_material_code": {
+            "filtered": false,
+            "detected": false
+          },
+          "protected_material_text": {
+            "filtered": false,
+            "detected": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--1ed16c4e-6320-4986-9058-68144f4c70e3-0",
+      "example": false,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2364,
+        "output_tokens": 4,
+        "total_tokens": 2368,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 1920
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:26:11.747246+05:30"
+  },
+  {
+    "set_goal_agent": {
+      "content": "```json\n{\n  \"goal\": \"Get the correct flight number\",\n  \"steps\": [\n    {\"step\": 1, \"description\": \"Call the API endpoint 'https://register.hackrx.in/submissions/myFavouriteCity' to get the initial city name.\"},\n    {\"step\": 2, \"description\": \"Use the provided landmark-to-city mapping in the document to identify the landmark associated with the returned city name.\"},\n    {\"step\": 3, \"description\": \"Based on the identified landmark, determine the appropriate flight API endpoint to call as per the instructions in the document.\"},\n    {\"step\": 4, \"description\": \"Call the determined flight API endpoint to retrieve the flight number.\"}\n  ]\n}\n```",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 153,
+          "prompt_tokens": 2673,
+          "total_tokens": 2826,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 2432
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_e6529acef4",
+        "id": "chatcmpl-C2cTFmnlGwFSWuJ8Ce5OQ3G4VI9HA",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "stop",
+        "logprobs": null,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "protected_material_code": {
+            "detected": false,
+            "filtered": false
+          },
+          "protected_material_text": {
+            "detected": false,
+            "filtered": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--b8a5e137-bd1e-42c4-8647-ee6d2f66f448-0",
+      "example": false,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2673,
+        "output_tokens": 153,
+        "total_tokens": 2826,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:26:13.529227+05:30"
+  },
+  {
+    "perform_action_decision": {
+      "content": "",
+      "additional_kwargs": {
+        "tool_calls": [
+          {
+            "id": "call_57fWuyjkI2uzikpikQck54SQ",
+            "function": {
+              "arguments": "{\"url\":\"https://register.hackrx.in/submissions/myFavouriteCity\"}",
+              "name": "get_from_endpoint"
+            },
+            "type": "function"
+          }
+        ],
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 27,
+          "prompt_tokens": 2830,
+          "total_tokens": 2857,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_ee1d74bde0",
+        "id": "chatcmpl-C2cTHk7SWD8Apf9w43Nsy9r9mQQLP",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "tool_calls",
+        "logprobs": null,
+        "content_filter_results": {}
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--5a6c99a0-0b1e-4b86-86a0-49085499f7fc-0",
+      "example": false,
+      "tool_calls": [
+        {
+          "name": "get_from_endpoint",
+          "args": {
+            "url": "https://register.hackrx.in/submissions/myFavouriteCity"
+          },
+          "id": "call_57fWuyjkI2uzikpikQck54SQ",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2830,
+        "output_tokens": 27,
+        "total_tokens": 2857,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:26:14.425775+05:30"
+  },
+  {
+    "tool_call_get_from_endpoint": {
+      "url": "https://register.hackrx.in/submissions/myFavouriteCity",
+      "response": {
+        "success": true,
+        "message": "Favorite city retrieved successfully",
+        "status": 200,
+        "data": {
+          "city": "New York"
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:26:15.956100+05:30"
+  },
+  {
+    "perform_action_decision": {
+      "content": "The returned city name is \"New York.\" \n\nBased on the document's landmark-to-city mapping, the landmark associated with \"New York\" is the \"Eiffel Tower.\"",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 37,
+          "prompt_tokens": 2891,
+          "total_tokens": 2928,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 2432
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_ee1d74bde0",
+        "id": "chatcmpl-C2cTJuk6WPXsWnXQAT96ZEeQvvawS",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "stop",
+        "logprobs": null,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--12bba583-f78f-4bfd-aa23-4e9644736716-0",
+      "example": false,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2891,
+        "output_tokens": 37,
+        "total_tokens": 2928,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:26:16.878792+05:30"
+  },
+  {
+    "perform_action_decision": {
+      "content": "",
+      "additional_kwargs": {
+        "tool_calls": [
+          {
+            "id": "call_YVmUwdG0bwX096EKvUbOuRgH",
+            "function": {
+              "arguments": "{\"url\":\"https://register.hackrx.in/teams/public/flights/getThirdCityFlightNumber\"}",
+              "name": "get_from_endpoint"
+            },
+            "type": "function"
+          }
+        ],
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2931,
+          "total_tokens": 2963,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 2432
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_ee1d74bde0",
+        "id": "chatcmpl-C2cTK961ISdlBzwEfZmhN2JEtmlG8",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "tool_calls",
+        "logprobs": null,
+        "content_filter_results": {}
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--3f3d8a10-be6e-40b5-aa8e-07cd84577cf4-0",
+      "example": false,
+      "tool_calls": [
+        {
+          "name": "get_from_endpoint",
+          "args": {
+            "url": "https://register.hackrx.in/teams/public/flights/getThirdCityFlightNumber"
+          },
+          "id": "call_YVmUwdG0bwX096EKvUbOuRgH",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2931,
+        "output_tokens": 32,
+        "total_tokens": 2963,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:26:17.698568+05:30"
+  },
+  {
+    "tool_call_get_from_endpoint": {
+      "url": "https://register.hackrx.in/teams/public/flights/getThirdCityFlightNumber",
+      "response": {
+        "success": true,
+        "message": "Pune flight number generated successfully",
+        "status": 200,
+        "data": {
+          "flightNumber": "1e5d4a"
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:26:20.673525+05:30"
+  },
+  {
+    "perform_action_decision": {
+      "content": "The flight number is **1e5d4a**.",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 15,
+          "prompt_tokens": 2998,
+          "total_tokens": 3013,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 2432
+          }
+        },
+        "model_name": "gpt-4o-2024-11-20",
+        "system_fingerprint": "fp_ee1d74bde0",
+        "id": "chatcmpl-C2cTOVFlesaANo3fpbDVQW0PtHMBj",
+        "service_tier": null,
+        "prompt_filter_results": [
+          {
+            "prompt_index": 0,
+            "content_filter_results": {}
+          }
+        ],
+        "finish_reason": "stop",
+        "logprobs": null,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "protected_material_code": {
+            "filtered": false,
+            "detected": false
+          },
+          "protected_material_text": {
+            "filtered": false,
+            "detected": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      },
+      "type": "ai",
+      "name": null,
+      "id": "run--0c0e72f2-d4ca-4321-91ed-6153f6689fb4-0",
+      "example": false,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 2998,
+        "output_tokens": 15,
+        "total_tokens": 3013,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 2432
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    "timestamp": "2025-08-09T17:26:21.591007+05:30"
+  },
+  {
+    "final_answer": "The flight number is **1e5d4a**.",
+    "timestamp": "2025-08-09T17:26:22.100756+05:30"
   }
 ]
