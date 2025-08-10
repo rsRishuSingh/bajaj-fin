@@ -43,7 +43,7 @@ async def download_and_identify_file(doc_url: str) -> Tuple[Optional[bytes], Opt
 
 # Testing
 
-async def main(url: str):
+async def run_download_and_identify_file(url: str):
     """Main function to run the async download."""
     
     content, file_type, error = await download_and_identify_file(url)
@@ -58,25 +58,25 @@ async def main(url: str):
     return content, file_type
 
 
-def run_download_and_identify_file(url: str):
-    """
-    This is the corrected synchronous wrapper function.
-    It now correctly uses the 'url' parameter passed to it.
-    """
-    # The hardcoded URL has been removed from here.
-    return asyncio.run(main(url))
+# def run_download_and_identify_file(url: str):
+#     """
+#     This is the corrected synchronous wrapper function.
+#     It now correctly uses the 'url' parameter passed to it.
+#     """
+#     # The hardcoded URL has been removed from here.
+#     return asyncio.run(main(url))
 
 
 # --- Example Usage ---
-if __name__ == "__main__":
-    # Now you can pass any URL to the function and it will work.
-    pdf_url = "https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D"
-    print("--- Testing PDF URL ---")
-    run_download_and_identify_file(pdf_url)
+# if __name__ == "__main__":
+#     # Now you can pass any URL to the function and it will work.
+#     pdf_url = "https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D"
+#     print("--- Testing PDF URL ---")
+#     run_download_and_identify_file(pdf_url)
 
-    print("\n" + "="*40 + "\n")
+#     print("\n" + "="*40 + "\n")
 
-    # Example with a different URL (HTML page)
-    html_url = "http://example.com"
-    print("--- Testing HTML URL ---")
-    run_download_and_identify_file(html_url)
+#     # Example with a different URL (HTML page)
+#     html_url = "http://example.com"
+#     print("--- Testing HTML URL ---")
+#     run_download_and_identify_file(html_url)

@@ -5,7 +5,7 @@ from typing import List, Dict
 from qdrant_client import QdrantClient, AsyncQdrantClient, models
 from langchain_openai import AzureOpenAIEmbeddings
 
-async def ensure_collection_exists(sync_client: QdrantClient, collection_name: str, embedder: AzureOpenAIEmbeddings):
+def get_qdrant_collection(sync_client: QdrantClient, collection_name: str, embedder: AzureOpenAIEmbeddings):
     """Checks if a collection exists in Qdrant and creates it if not."""
     try:
         all_collections = sync_client.get_collections().collections
@@ -24,7 +24,7 @@ async def ensure_collection_exists(sync_client: QdrantClient, collection_name: s
         print(f"   - 🚨 CRITICAL ERROR during Qdrant collection check/creation: {e}")
         raise
 
-async def upsert_chunks_to_qdrant(
+async def upsert_chunks_qdrant(
     async_client: AsyncQdrantClient,
     collection_name: str,
     chunks: List[Dict],
