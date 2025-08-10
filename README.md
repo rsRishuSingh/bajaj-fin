@@ -27,6 +27,8 @@ docker run -p 8008:8000 manishjajoriya/final:v1
     pip install -r requirements.txt
     ```
 
+3. **Install [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html) for you system**
+
 3. **Start the server**
     ```bash
     uvicorn main:app --reload --port 8008
