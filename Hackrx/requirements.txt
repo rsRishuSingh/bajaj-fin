@@ -1,0 +1,52 @@
+# Core utilities
+python-dotenv~=1.1.1
+pytz~=2025.2
+
+# PDF and document processing
+PyMuPDF  # for fitz
+pypdf
+python-docx~=1.2.0
+python-pptx~=1.0.2
+openpyxl~=3.1.5
+pillow~=11.3.0
+pytesseract~=0.3.13
+
+# FastAPI and web server
+fastapi~=0.116.1
+uvicorn
+starlette~=0.47.2
+pydantic~=2.11.7
+
+# CORS and async
+aiohttp~=3.12.15
+aiofiles~=24.1.0
+
+# Data science and ML
+numpy~=2.3.2
+
+# LangChain and extensions
+langchain
+langchain-community
+langchain-experimental
+langgraph
+langchain-openai~=0.3.28
+langchain_groq
+
+# Vectorstores & embeddings
+qdrant-client[fastembed]~=1.14.1
+
+# Retrieval
+rank-bm25~=0.2.2
+
+# Misc
+IPython
+
+# If you use OpenAI or Groq APIs
+openai
+
+# For text splitting
+langchain-text-splitters~=0.3.9
+sympy~=1.14.0
+requests~=2.32.4
+beautifulsoup4~=4.13.4
+httpx~=0.28.1
