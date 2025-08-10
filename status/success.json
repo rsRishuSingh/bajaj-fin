@@ -1,0 +1,34 @@
+[
+    {
+        "timestamp": "10-08-2025_18-34-53",
+        "document_url": "https://hackrx.blob.core.windows.net/assets/principia_newton.pdf?sv=2023-01-03&st=2025-07-28T07%3A20%3A32Z&se=2026-07-29T07%3A20%3A00Z&sr=b&sp=r&sig=V5I1QYyigoxeUMbnUKsdEaST99F5%2FDfo7wpKg9XXF5w%3D",
+        "questions_and_answers": [
+            {
+                "question": "What are Newton’s three laws of motion as described in the Principia? Provide their original statements and plain‑language summaries.",
+                "answer": "Based on the provided text, there is no specific information regarding the original statements or plain-language summaries of Newton’s three laws of motion as described in the Principia."
+            },
+            {
+                "question": "Explain Newton’s law of universal gravitation, including the inverse‑square formulation and the gravitational constant.",
+                "answer": "Newton’s law of universal gravitation states that every particle of matter attracts every other particle with a force proportional to the product of their masses and inversely proportional to the square of the distance between them, as outlined in the principle of Universal Gravitation (Context 1, 2, 3, 7). This force acts mutually between bodies, with the gravity of each part of a planet contributing to the total gravitational force of the whole planet (Context 2, 7). The inverse-square law means the gravitational force decreases with the square of the distance from the center of the attracting body (Context 3, 7). Although the gravitational constant itself is not explicitly mentioned in the provided contexts, the law’s formulation and its verification through celestial and terrestrial motions are emphasized (Context 1, 4, 8)."
+            },
+            {
+                "question": "Describe the concept of 'force' in Principia—how is it defined, measured, and applied in examples.",
+                "answer": "In Principia, force is defined as an attractive power between particles of matter, acting according to mathematical proportions and conditions, such as the inverse square of the distance between particles (Context 1, 2). It is measured in relation to the motion it produces, with forces being proportional to the spaces described and inversely proportional to the squares of the times (Context 5). Force is applied to explain natural phenomena, including the motions of celestial bodies like planets, comets, the moon, and the sea, by deducing gravitational forces that cause bodies to tend toward the sun and planets (Context 3, 6). Additionally, forces are involved in mechanical systems such as machines and biological movements, where forces cause equal and opposite changes in motion upon interaction (Context 7, 8). This comprehensive approach combines mathematical laws with physical observations to analyze and predict the behavior of bodies under various forces, as detailed throughout the three books of Principia, especially in the first two books on motion and forces and the third book on the system of the world (Context 4, 6)."
+            },
+            {
+                "question": "Outline Newton’s treatment of planetary motion: how does he derive Kepler’s laws from his mechanics and gravity law?",
+                "answer": "Newton derived Kepler’s laws by formulating the Universal Law of Gravitation, which states that every particle of matter attracts every other with a force inversely proportional to the square of the distance between them (Context 1, 4). He extended this law to explain the motions of terrestrial bodies, the moon, planets, satellites, and comets, unifying their movements under one general principle (Context 4). Newton demonstrated that a planet acted upon by an attractive force varying inversely as the square of the distance describes an elliptical orbit with the force located at one focus, thereby proving Kepler’s first law (Context 8). He composed propositions on planetary motion showing that the centripetal forces governing moons and planets follow the same inverse-square law, which accounts for their periodic times and elliptical orbits (Context 6, 7). Thus, Newton’s mechanics and gravity law mathematically confirmed and generalized Kepler’s empirical laws, explaining planetary motions as consequences of universal gravitation and laws of motion (Context 3, 4, 8)."
+            },
+            {
+                "question": "What mathematical methods did Newton employ in the Principia (e.g. geometric limit arguments)? Provide examples from the text.",
+                "answer": "Newton employed primarily the Geometrical Method in the Principia, as he preferred geometrical reasoning over algebraical calculations, having invented Fluxions but censured the handling of geometrical subjects by algebraic methods (Context 4). The Principia consists of three books: the first two focus on laws and conditions of motion and forces, illustrated with scholia on general philosophical points, while the third book, \"Of the System of the World,\" derives celestial phenomena and forces mathematically from the propositions demonstrated in the first two books (Contexts 2 and 3). The work includes a series of about twelve propositions on planetary motion (Context 1) and uses mathematical propositions to deduce motions of planets, comets, the moon, and the sea (Context 2). Thus, Newton's mathematical methods in the Principia are based on geometrical limit arguments and mathematical propositions rather than algebraic formulae, exemplified by the propositions on motion and forces in the first two books and their application in the third book to celestial mechanics (Contexts 1, 2, 3, and 4)."
+            }
+        ],
+        "timing_stats": {
+            "document_processing_loading_seconds": 15.49,
+            "total_querying_seconds": 16.09,
+            "average_time_per_question": 3.22,
+            "total_execution_seconds": 31.6
+        }
+    }
+]

@@ -1,62 +1,86 @@
 import os
 import time
-from download_pdf import download_pdf
-from chunking import process_and_chunk_pdf
-# from qdrant_connect import create_collection, insert_data_in_batches, delete_collection
-from async_qdrant import create_collection, insert_data_parallel, delete_collection
-from graph_orchestrator import parallel_orchestrator
-from question_list import list_of_questions
-from utility import save_responses_append
-import asyncio
+import traceback
 
-async def main() -> None:
-    """Executes the full RAG pipeline from a JSON input file and returns the results."""
-
-    begin = time.time()
-    start = time.time()
-
-    path = '''https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D'''
-
-    collection_name = "my_document_store_48"
-
-    is_downloaded = download_pdf(path)
-    print("PDF status: ", is_downloaded)
-    print("PDF Downloaded in: ", time.time()-start)
+from bs4 import BeautifulSoup
+import requests
+from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException, Header
+from starlette.middleware.cors import CORSMiddleware
+from sympy import false
+import httpx
 
 
+from rag_application.run_pipeline import run_pipeline
+from schemas.schema import QueryIn
+from log import log_and_save_response, log_incoming_request
 
-    start = time.time()
-    all_chunks = process_and_chunk_pdf(chunk_size=500)
-    print("Chunks status: ", len(all_chunks))
-    print("Chunks created in: ", time.time()-start)
+load_dotenv(verbose=True)
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["Authorization", "Content-Type"],
+)
 
 
-    start = time.time()
-    is_created = await create_collection(collection_name)
-    print("Collection status: ", is_created)
-    print("Collection created in: ", time.time()-start)
+@app.get("/")
+async def root():
+    return {"message": "Welcome", "status": "up"}
 
 
-    start = time.time()
-    is_inserted = await insert_data_parallel(all_chunks,collection_name)
-    print("Insert status: ", is_inserted)
-    print("Chunks insert in: ", time.time()-start)
+@app.post("/hackrx/run", )
+async def protected_route(queryIn: QueryIn, authorization: str = Header(...)):
+    log_incoming_request({"documents": queryIn.documents, "questions": queryIn.questions})
+    if not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="Token should start with Bearer")
 
-    start = time.time()
-    responses = await parallel_orchestrator(list_of_questions, collection_name)
- 
-    print("Query status: ", len(responses))
-    print("Query answered in: ", time.time()-start)
+    token = authorization.split(" ")[1]
+    if token != os.getenv("API_TOKEN"):
+        raise HTTPException(status_code=401, detail="Invalid authorization token,")
 
-    print("Total time taken: ",time.time()-begin)
+    # if queryIn.documents == "https://hackrx.blob.core.windows.net/hackrx/rounds/FinalRound4SubmissionPDF.pdf?sv=2023-01-03&spr=https&st=2025-08-07T14%3A23%3A48Z&se=2027-08-08T14%3A23%3A00Z&sr=b&sp=r&sig=nMtZ2x9aBvz%2FPjRWboEOZIGB%2FaGfNf5TfBOrhGqSv4M%3D":
+    #     flight_url = os.getenv("FLIGHT_URL")
+    #     flight_number = await get_flight_number(flight_url)
+    #     log_and_save_response({"documents":queryIn.documents, "question" : queryIn.questions, "flight_number":flight_number}, True)
+    #     return {"answers": [flight_number]}
+    #
+    # if queryIn.documents.startswith("https://register.hackrx.in/utils/get-secret-token") :
+    #     secret_token = get_secret_token(queryIn.documents)
+    #     log_and_save_response({"documents":queryIn.documents, "question" : queryIn.questions, "secret_token" : secret_token}, True)
+    #     return {"answers": [secret_token]}
 
-    os.remove('temp.pdf')
-    print("Deleted PDF")
-    
-    is_deleted = await delete_collection(collection_name)
-    print("Connection deleted status: ", is_deleted)
+    try:
+        answers = await run_pipeline(queryIn.documents.strip(), queryIn.questions)
+        return {"answers": answers}
+    except Exception as e:
+        error_data = {
+            "error": str(e),
+            "type": type(e).__name__,
+            "message": str(e),
+            "traceback": traceback.format_exc(),
+        }
+        log_and_save_response(error_data, false)
+        raise HTTPException(status_code=500, detail=str(e))
 
-    save_responses_append(responses)
+async def get_flight_number(url: str):
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url)
+        response.raise_for_status()  # Raises error for non-2xx responses
+        data = response.json()
+        flight_number = data.get("data", {}).get("flightNumber")
+        return flight_number
 
-    
-asyncio.run(main())
+def get_secret_token(url) -> str | None:
+    response = requests.get(url)
+    response.raise_for_status()  # Raises an error for bad responses
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    token_div = soup.find("div", id="token")
+    if token_div:
+        return token_div.text.strip()
+    else:
+        return None

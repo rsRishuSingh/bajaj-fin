@@ -1,0 +1,13 @@
+[
+    {
+        "timestamp": "10-08-2025_18-34-21",
+        "documents": "https://hackrx.blob.core.windows.net/assets/principia_newton.pdf?sv=2023-01-03&st=2025-07-28T07%3A20%3A32Z&se=2026-07-29T07%3A20%3A00Z&sr=b&sp=r&sig=V5I1QYyigoxeUMbnUKsdEaST99F5%2FDfo7wpKg9XXF5w%3D",
+        "questions": [
+            "What are Newton’s three laws of motion as described in the Principia? Provide their original statements and plain‑language summaries.",
+            "Explain Newton’s law of universal gravitation, including the inverse‑square formulation and the gravitational constant.",
+            "Describe the concept of 'force' in Principia—how is it defined, measured, and applied in examples.",
+            "Outline Newton’s treatment of planetary motion: how does he derive Kepler’s laws from his mechanics and gravity law?",
+            "What mathematical methods did Newton employ in the Principia (e.g. geometric limit arguments)? Provide examples from the text."
+        ]
+    }
+]
