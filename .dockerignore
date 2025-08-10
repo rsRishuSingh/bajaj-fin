@@ -10,9 +10,6 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Environment files
-.env
-
 # Git
 .git
 .gitignore
